@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "./Nav.css"
 
 export const Nav = () => {
 
@@ -12,8 +13,8 @@ export const Nav = () => {
     }
 
     return (<>
-        <nav className="navbar navbar-dark bg-primary navbar-expand-lg" >
-            <Link  className="navbar-brand" to="/">
+        <nav className="navbar navbar-dark bg-primary navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
+            <Link  className="navbar-brand logo_menu" to="/">
                 <img src="https://www.designevo.com/res/templates/thumb_small/purple-earth-and-white-airplane.webp" alt="Logotipo" />
             </Link>
 
@@ -23,8 +24,8 @@ export const Nav = () => {
                     </span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
+            <div className="collapse navbar-collapse wrapper_enlaces" id="navbarNavAltMarkup">
+                <div className="navbar-nav d-lg-flex justify-content-lg-evenly fw-500">
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
