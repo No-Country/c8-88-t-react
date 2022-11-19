@@ -1,24 +1,29 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, getDocs } from "firebase/firestore"
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAtzNq1nzCqlVnMzYPVYKn3LVt1VdGvKO4",
-  authDomain: "travel-7e5f8.firebaseapp.com",
-  projectId: "travel-7e5f8",
-  storageBucket: "travel-7e5f8.appspot.com",
-  messagingSenderId: "183831899669",
-  appId: "1:183831899669:web:4e74e697664c086397e81c",
-  measurementId: "G-2FS5VS0EVL"
+  apiKey: "AIzaSyCIwvuxr0Tt3MhYe4m4H7rH0iRebY0jPrA",
+  authDomain: "travelpack-c2d9e.firebaseapp.com",
+  projectId: "travelpack-c2d9e",
+  storageBucket: "travelpack-c2d9e.appspot.com",
+  messagingSenderId: "1018371128632",
+  appId: "1:1018371128632:web:9c50d1cc368f3901bb55cd"
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+/* const analytics = getAnalytics(app); */
+/* const auth = getAuth(app); */
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
-export const auth = getAuth(app)
+export async function getTravellers() {
+  const miTravellers = collection(firestore, "Travellers");
+  let snapshotDB = await getDocs(miTravellers);
+  let dataDocs = snapshotDB.docs.map((documento) => {
+    return { ...documento.data(), id: documento.id }
+  });
+  return dataDocs
+}
+
+export default firestore;

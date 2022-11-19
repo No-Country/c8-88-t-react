@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import { Button, Col, Container, Form, FormCheck, FormControl, FormLabel, Row } from "react-bootstrap"
+import { Col, Container, Form, FormCheck, FormControl, FormLabel, Row } from "react-bootstrap"
 import ButtonNext from "./ButtonNext"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Envios() {
 
@@ -141,7 +141,6 @@ function Envios() {
                         </Col>
                     </Row>
                 </Container>
-                {/* <Button type="submit">enviar formulario</Button> */}
                 <ButtonNext />
             </Form>
         </>

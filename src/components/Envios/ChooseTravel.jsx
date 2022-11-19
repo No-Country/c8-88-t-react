@@ -1,22 +1,51 @@
-import React from 'react'
-import { Container, Row } from "react-bootstrap"
+import React, { useEffect, useState } from 'react'
+import { Container, Form, Row } from "react-bootstrap"
+import { getTravellers } from '../../db'
+import { useNavigate } from "react-router-dom"
 import ButtonNext from './ButtonNext'
-import CardTravel from './CardTravel'
+import CardList from './CardList'
 
 
-function ChooseTravel () {
+function ChooseTravel() {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
+
+    //fecha = fecha introducida en home
+    let fecha = true;
+
+    useEffect(() => {
+        setLoading(true)
+        if (fecha === true) {
+            getTravellers().then(response => setData(response))
+                .finally(() => setLoading(false));
+        } else {
+            setLoading(false)
+        }
+    }, [fecha])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate(`/OfertTravel`)
+    }
+
     return (
         <>
-            <h1>Por favor, elije a tu viajero</h1>
-            <Container className="mt-5 bg-secondary">
-                <Row md="auto" className="justify-content-center">
-                    <CardTravel />
-                    <CardTravel />
-                </Row>
-            </Container>
-            <ButtonNext to="/OfertTravel"/>
-        </>
-    )
+            {loading ? (<Container>
+                <h1>loading...</h1>
+            </Container>) :
+                (<>
+                    <h1>Por favor, elije a tu viajero</h1>
+                    <Form onSubmit={handleSubmit}>
+                        <Container className="mt-5 bg-secondary">
+                            <Row md="auto" className="justify-content-center">
+                                <CardList data={data} />
+                            </Row>
+                        </Container>
+                        <ButtonNext />
+                    </Form>
+                </>)}
+        </>)
 }
 
 export default ChooseTravel
