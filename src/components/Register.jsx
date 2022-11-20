@@ -1,23 +1,71 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import setUser from '../reducers/users/index'
+import { useState} from 'react'
+import { singFacebook, singUp, singGoogle } from '../db/registers'
+import { useNavigate } from 'react-router'
 
 const Register = () => {
-  const dispatch = useDispatch();
-  const {email, fullName, password} = useSelector(state => state.user)
+
+  const [error, setError] = useState()
+  const navigate = useNavigate()
+  
+
+  const [user, setUser] = useState({
+    email: "",
+    fullName: "",
+    password: ""
+  })
+
+  const handleFacebook = () => {
+    singFacebook()
+    navigate('/cuenta')
+  }
+
+  const handleGoogle = () => {
+     singGoogle()
+     navigate('/cuenta')
+  }
+
 
   
-  
+  const handleChange = e => {
+     setUser({
+      ...user,
+      [e.target.name] : e.target.value
+     })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try{
+      await singUp(user.email, user.fullName, user.password)
+      navigate('/cuenta')
+
+    }catch(error){
+      console.log(error.code)
+      if(error.code === 'auth/internal-error'){
+        setError('Correo Invalido')
+      }
+
+    }
+  }
 
 
   return (
     <div>
-      <form action="">
-           <label For="email">email:</label><input type="email"  id="email"/>
-           <label For="full name">full name:</label><input type="text" id="fullName"/>
-           <label For="password">password:</label><input type="password" id="password"/>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit}>
+           <input name="email"  type="email"  placeholder="email" onChange={handleChange}/>
+           <input name="fullName" type="text" placeholder="fullName" onChange={handleChange} />
+           <input name="password" type="password" placeholder="******" onChange={handleChange}/>
+       <button>Send</button>
       </form>
-      <button>Send</button>
+      <div>
+        <button onClick={handleFacebook}>Registrate con Facebook</button>
+      </div>
+      <div>
+        <button onClick={handleGoogle}>Registrate con Google</button>
+      </div>
+
     </div>
 
   )
