@@ -7,8 +7,8 @@ const Home = () => {
 
   const handleRegister = () => navigate('/register')
   const handleLogin = () => navigate('/login')
-    
-  
+
+
 
   return (
     <div >
@@ -17,10 +17,9 @@ const Home = () => {
       <button onClick={handleRegister}>Register</button>
       <button onClick={handleLogin}>Login</button>
     </div>
-    
+
   )
 }
 
 export default Home
-
 

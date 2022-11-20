@@ -1,0 +1,10 @@
+.navbar .logo_menu img{
+    width: 120px;
+    height: 70px;
+}
+.navbar .wrapper_enlaces{
+    max-width: 1024px;
+}
+.navbar .wrapper_enlaces .navbar-nav{
+    width: 100%;
+}
