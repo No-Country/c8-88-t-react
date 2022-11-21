@@ -1,0 +1,25 @@
+.wrapper_home{
+    min-height: 100vh;
+}
+.wrapper_home .wrapper_form{
+    margin: 2rem auto;
+    padding: 2rem 0;
+    border-radius: 15px;
+    width: clamp(320px, 85vw, 1366px);
+    min-height: 300px;
+    max-height: 470px;
+    background-color: rgb(181, 181, 181);
+}
+.wrapper_home .wrapper_envios{
+    margin: 2rem auto;
+    padding: 1rem;
+    width: clamp(320px, 85vw, 1366px);
+    min-height: 300px;
+    max-height: 450px;
+}
+.wrapper_home .wrapper_envios .wrapper_cards{
+    gap: 1rem;
+}
+/* .wrapper_home .wrapper_envios .wrapper_cards > *{
+    margin-right: 1rem;
+} */

@@ -19,7 +19,7 @@ function Envios() {
             ...data,
             [e.target.name]: e.target.value,
         })
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +32,7 @@ function Envios() {
             objeto: ""
         })
         navigate(`/ChooseTravel`)
-    }
+    };
 
     return (
         <>

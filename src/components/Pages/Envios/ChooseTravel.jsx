@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Form, Row } from "react-bootstrap"
-import { getTravellers } from '../../db'
+import { getTravellers } from '../../../db'
 import { useNavigate } from "react-router-dom"
 import ButtonNext from './ButtonNext'
 import CardList from './CardList'

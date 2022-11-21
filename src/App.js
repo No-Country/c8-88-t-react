@@ -1,14 +1,14 @@
 import './App.css';
-import Home from './components/Home';
+import Home from './components/Pages/Home/Home';
 import { Routes, Route } from 'react-router';
-import Login from './components/Login';
-import { Seguimiento } from './components/Seguimiento';
 import { Nav } from './components/Navbar/Nav';
-import ChooseTravel from './components/Envios/ChooseTravel';
-import OfertTravel from './components/Envios/OfertTravel';
-import Envios from './components/Envios/Envios';
-import Cuenta from './components/Cuenta';
-import MiPaquete from './components/Envios/MiPaquete';
+import Login from './components/Login';
+import Seguimiento from './components/Pages/Seguimientos/Seguimiento';
+import ChooseTravel from './components/Pages/Envios/ChooseTravel';
+import OfertTravel from './components/Pages/Envios/OfertTravel';
+import Envios from './components/Pages/Envios/Envios';
+import Cuenta from './components/Pages/Cuenta/Cuenta';
+import MiPaquete from './components/Pages/Envios/MiPaquete';
 
 
 function App() {
