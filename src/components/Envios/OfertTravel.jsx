@@ -3,6 +3,7 @@ import { Container, FormLabel, Row, Col, FormCheck, FormControl } from 'react-bo
 import FormRange from 'react-bootstrap/esm/FormRange'
 import ButtonNext from './ButtonNext'
 
+
 function OfertTravel() {
     return (
         <>
@@ -30,7 +31,9 @@ function OfertTravel() {
                     </Col>
                 </Row>
             </Container>
-            <ButtonNext to="" />
+            
+       <ButtonNext  />
+       
         </>
     )
 }

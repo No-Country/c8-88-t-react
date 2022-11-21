@@ -1,7 +1,10 @@
+
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs } from "firebase/firestore"
+import { getFirestore, collection, getDocs, setDoc } from "firebase/firestore"
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { FacebookAuthProvider} from 'firebase/auth'
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCIwvuxr0Tt3MhYe4m4H7rH0iRebY0jPrA",
@@ -14,8 +17,9 @@ const firebaseConfig = {
 
 
 /* const analytics = getAnalytics(app); */
-const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
+export const firestore = getFirestore(app);
+export const auth = getAuth(app)
 
 export async function getTravellers() {
   const miTravellers = collection(firestore, "Travellers");
@@ -26,5 +30,37 @@ export async function getTravellers() {
   return dataDocs
 }
 
-export const auth = getAuth(app)
+
+// registro google
+export const singGoogle = async () => {
+    const provider = new GoogleAuthProvider()
+
+    try {
+        const credentials =  await signInWithPopup(auth, provider)
+        alert("bienvendio" + " " + credentials.user.displayName)
+        
+    } catch (error) {
+        console.log(error.message)
+        
+    }
+}
+
+// registro facebook
+export const singFacebook = async () => {
+   const providerF = new FacebookAuthProvider()
+   
+   try {
+    const credentials =  await signInWithPopup(auth, providerF)
+    alert("bienvendio" + " " + credentials.user.email)
+    
+} catch (error) {
+    console.log(error.message)
+    
+}
+
+
+}
+
+
+
 export default firestore;
