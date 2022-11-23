@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 import ButtonNext from './ButtonNext'
 import CardList from './CardList'
 
-
 function ChooseTravel() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -22,7 +21,7 @@ function ChooseTravel() {
         } else {
             setLoading(false)
         }
-    }, [fecha])
+    }, [fecha]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

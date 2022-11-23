@@ -11,6 +11,7 @@ function CardList({ data }) {
                     apellido={item.Apellido}
                     img={item.img}
                     valoracion={item.Valoracion}
+                    id={item.id}
                 />
             })}
         </>

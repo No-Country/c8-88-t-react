@@ -1,9 +1,12 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"
+import { addHome } from "../../../reducers/users";
 
 export const FormDataPack = () => {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [data, setData] = useState({
         origen: "",
         destino: "",
@@ -20,14 +23,8 @@ export const FormDataPack = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(data);
-        setData({
-            origen: "",
-            destino: "",
-            inicio: "",
-            final: ""
-        })
-        navigate(`/Envios`)
+        dispatch(addHome(data));
+        navigate(`/Envios`);
     };
 
     return (<>

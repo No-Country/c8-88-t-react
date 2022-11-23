@@ -2,10 +2,13 @@ import React, { useState } from "react"
 import { Col, Container, Form, FormCheck, FormControl, FormLabel, Row } from "react-bootstrap"
 import ButtonNext from "./ButtonNext"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { addEnvios } from "../../../reducers/users";
 
 function Envios() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [data, setData] = useState({
         alto: "",
         largo: "",
@@ -23,14 +26,7 @@ function Envios() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(data);
-        setData({
-            alto: "",
-            largo: "",
-            ancho: "",
-            peso: "",
-            objeto: ""
-        })
+        dispatch(addEnvios(data));
         navigate(`/ChooseTravel`)
     };
 
@@ -76,72 +72,62 @@ function Envios() {
                     </Row>
                     <Row className="mb-5">
                         <Col>
-                            <div key={`inline-radio`}>
-                                <FormLabel>Peso:</FormLabel>
-                                <FormCheck
-                                    inline
-                                    label="Menor a 1kg"
-                                    name="peso"
-                                    type="radio"
-                                    id="{`inline-radio`-1}"
-                                    value="menor a 1kg"
-                                    onChange={inputForm}
-                                />
-                                <FormCheck
-                                    inline
-                                    label="De 1 a 3kg"
-                                    name="peso"
-                                    type="radio"
-                                    id="{`inline-radio`-2}"
-                                    value="de 1 a 3kg"
-                                    onChange={inputForm}
-                                /><FormCheck
-                                    inline
-                                    label="De 3 a 5kg"
-                                    name="peso"
-                                    type="radio"
-                                    id="{`inline-radio`-3}"
-                                    value="de 3 a 5kg"
-                                    onChange={inputForm}
-                                />
-                            </div>
+                            <FormLabel>Peso:</FormLabel>
+                            <FormCheck
+                                inline
+                                label="Menor a 1kg"
+                                name="peso"
+                                type="radio"
+                                value="menor a 1kg"
+                                onChange={inputForm}
+                            />
+                            <FormCheck
+                                inline
+                                label="De 1 a 3kg"
+                                name="peso"
+                                type="radio"
+                                value="de 1 a 3kg"
+                                onChange={inputForm}
+                            /><FormCheck
+                                inline
+                                label="De 3 a 5kg"
+                                name="peso"
+                                type="radio"
+                                value="de 3 a 5kg"
+                                onChange={inputForm}
+                            />
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <h4 className="mb-3">Tipo de objeto</h4>
-                            <div key={`inline-radio`}>
-                                <FormCheck
-                                    inline
-                                    label="Documento"
-                                    name="objeto"
-                                    type="radio"
-                                    id="{`inline-radio`-1}"
-                                    value="documento"
-                                    onChange={inputForm}
-                                />
-                                <FormCheck
-                                    inline
-                                    label="Objeto personal"
-                                    name="objeto"
-                                    type="radio"
-                                    id="{`inline-radio`-2}"
-                                    value="objeto personal"
-                                    onChange={inputForm}
-                                /><FormCheck
-                                    inline
-                                    label="Indumentaria"
-                                    name="objeto"
-                                    type="radio"
-                                    id="{`inline-radio`-3}"
-                                    value="indumentaria"
-                                    onChange={inputForm}
-                                />
-                            </div>
+                            <FormCheck
+                                inline
+                                label="Documento"
+                                name="objeto"
+                                type="radio"
+                                value="documento"
+                                onChange={inputForm}
+                            />
+                            <FormCheck
+                                inline
+                                label="Objeto personal"
+                                name="objeto"
+                                type="radio"
+                                value="objeto personal"
+                                onChange={inputForm}
+                            /><FormCheck
+                                inline
+                                label="Indumentaria"
+                                name="objeto"
+                                type="radio"
+                                value="indumentaria"
+                                onChange={inputForm}
+                            />
                         </Col>
                     </Row>
                 </Container>
-                <ButtonNext  />
+                <ButtonNext />
             </Form>
         </>
     )
