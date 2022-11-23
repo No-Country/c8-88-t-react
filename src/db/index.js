@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs, setDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, setDoc, doc, getDoc } from "firebase/firestore"
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { FacebookAuthProvider} from 'firebase/auth'
 
@@ -60,6 +60,12 @@ export const singFacebook = async () => {
 
 
 }
+
+// export async function orderDetail(id) {
+//   const docRef = doc(firestore, "orders", id)
+//   const docSnapshot = await getDocs(docRef);
+//   return console.log({ ...docSnapshot.data(), id: docSnapshot.id })
+// }
 
 
 
