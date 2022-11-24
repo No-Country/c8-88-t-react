@@ -19,13 +19,11 @@ const Home = () => {
     navigate("/cuenta");
   };
 
-  const handleRegister = () => navigate("/login");
   const handleLogin = () => navigate("/login");
 
   return (
     <>
       <div>
-        <button onClick={handleRegister}>Register</button>
         <button onClick={handleLogin}>Login</button>
         <div>
           <button onClick={handleFacebook}>Registrate con Facebook</button>

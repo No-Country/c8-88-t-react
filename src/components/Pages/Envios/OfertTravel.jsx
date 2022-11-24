@@ -8,10 +8,11 @@ import { addOfert } from '../../../reducers/users'
 
 
 function OfertTravel() {
-    
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [data, setData] = useState({
+        oferta: "",
         seguro: "",
         comentarios: ""
     });
@@ -28,7 +29,7 @@ function OfertTravel() {
         dispatch(addOfert(data));
         navigate(`/CheckPack`);
     };
-    
+
     return (
         <>
             <h1>Haz una oferta al viajero</h1>
@@ -36,8 +37,13 @@ function OfertTravel() {
                 <Container className="mt-5 bg-secondary">
                     <Row className="mb-3">
                         <FormLabel column lg="auto">Oferta ofrecida:</FormLabel>
-                        <Col>
-                            <FormRange />
+                        <Col xs={1}>
+                            <FormControl
+                                type="number"
+                                name="oferta"
+                                value={data.oferta}
+                                onChange={inputForm}
+                            />
                         </Col>
                     </Row>
                     <Row xs="auto" className="mb-3 justify-content-start">

@@ -63,6 +63,7 @@ const orderSlice = createSlice({
         addOfert: (state, action) => {
             state.seguro = action.payload.seguro;
             state.comentarios = action.payload.comentarios;
+            state.oferta = action.payload.oferta;
         }
     }
 });

@@ -45,7 +45,7 @@ function Envios() {
                         <FormLabel column lg="auto">Alto:</FormLabel>
                         <Col xs={1}>
                             <FormControl
-                                type="text"
+                                type="number"
                                 name="alto"
                                 value={data.alto}
                                 onChange={inputForm}
@@ -54,7 +54,7 @@ function Envios() {
                         <FormLabel column lg="auto">Largo:</FormLabel>
                         <Col xs={1}>
                             <FormControl
-                                type="text"
+                                type="number"
                                 name="largo"
                                 value={data.largo}
                                 onChange={inputForm}
@@ -63,7 +63,7 @@ function Envios() {
                         <FormLabel column lg="auto">Ancho:</FormLabel>
                         <Col xs={1}>
                             <FormControl
-                                type="text"
+                                type="number"
                                 name="ancho"
                                 value={data.ancho}
                                 onChange={inputForm}

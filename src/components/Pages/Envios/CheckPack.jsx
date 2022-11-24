@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import ButtonNext from './ButtonNext';
@@ -22,23 +22,34 @@ function CheckPack() {
     return (
         <>
             <Form onSubmit={handleSubmit}>
-                <Container>
-                    <h1>Revisa tus datos</h1>
-                    <p>Origen: {state.origen}</p>
-                    <p>Destino: {state.destino}</p>
-                    <p>Inicio: {state.inicio}</p>
-                    <p>Final: {state.final}</p>
-                    <p>Largo: {state.largo}</p>
-                    <p>Alto: {state.alto}</p>
-                    <p>Ancho: {state.ancho}</p>
-                    <p>Peso: {state.peso}</p>
-                    <p>Objeto: {state.objeto}</p>
-                    <p>Viajero:{state.travel}</p>
-                    <p>Oferta: {state.oferta}</p>
-                    <p>Seguro: {state.seguro}</p>
-                    <p>Comentarios: {state.comentarios}</p>
-                    <ButtonNext />
+                <Container className="mt-5 bg-secondary">
+                <h1>Dettale del envio</h1>
+                    <Row className="g-4">
+                        <Col lg={2}>
+                            <p>Origen: {state.origen}</p>
+                        </Col>
+                        <Col lg={2}>
+                            <p>Destino: {state.destino}</p>
+                        </Col>
+                        <Col lg={3}>
+                            <p>Viajero:{state.travel}</p>
+                        </Col>
+                    </Row>
+                    <Row className="g-4">
+                        <Col lg={5}>
+                            <p>Medidas: {state.largo}cm x {state.alto}cm x {state.ancho}cm</p>
+                        </Col>
+                        <Col lg={5}>
+                            <p>Oferta: {state.oferta}</p>
+                        </Col>
+                    </Row>
+                    <Row className="g-4">
+                        <Col lg={2}>
+                            <p>Peso: {state.peso}</p>
+                        </Col>
+                    </Row>
                 </Container>
+                    <ButtonNext />
             </Form>
         </>
     )
