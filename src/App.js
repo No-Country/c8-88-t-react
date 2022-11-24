@@ -1,4 +1,3 @@
-import './App.css';
 import Home from './components/Pages/Home/Home';
 import { Routes, Route } from 'react-router';
 import { Nav } from './components/Navbar/Nav';
@@ -8,6 +7,7 @@ import ChooseTravel from './components/Pages/Envios/ChooseTravel';
 import OfertTravel from './components/Pages/Envios/OfertTravel';
 import Envios from './components/Pages/Envios/Envios';
 import Cuenta from './components/Pages/Cuenta/Cuenta';
+import { Footer } from './components/Footer/Footer';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
       <Route path="/seguimiento" element={<Seguimiento />} />
       <Route path="/cuenta" element={<Cuenta />} />
     </Routes>
+    <Footer/>
   </>);
 }
 
