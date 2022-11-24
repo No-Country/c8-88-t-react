@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { combineReducers, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     email: "",
@@ -50,7 +50,7 @@ const orderSlice = createSlice({
             state.inicio = action.payload.inicio;
             state.final = action.payload.final;
         },
-        addEnvios: (state, action) =>{
+        addEnvios: (state, action) => {
             state.alto = action.payload.alto;
             state.largo = action.payload.largo;
             state.ancho = action.payload.ancho;
@@ -60,18 +60,21 @@ const orderSlice = createSlice({
         addTravel: (state, action) => {
             state.travel = action.payload.travel;
         },
-        addOfert: (state, action) =>{
+        addOfert: (state, action) => {
             state.seguro = action.payload.seguro;
             state.comentarios = action.payload.comentarios;
         }
     }
-})
+});
 
-
-
-/* export const { addUser, unsetUser } = userSlice.actions; */
-/* export default userSlice.reducer; */
+export const { addUser, unsetUser } = userSlice.actions;
 export const { addHome, addEnvios, addTravel, addOfert } = orderSlice.actions;
-export default orderSlice.reducer
+
+const reducer = combineReducers({
+    user: userSlice.reducer,
+    order: orderSlice.reducer
+});
+
+export default reducer
 
 

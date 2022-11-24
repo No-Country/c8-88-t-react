@@ -3,20 +3,18 @@ import { Container, FormLabel, Row, Col, FormCheck, FormControl, Form } from 're
 import FormRange from 'react-bootstrap/esm/FormRange'
 import { useNavigate } from 'react-router-dom'
 import ButtonNext from './ButtonNext'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addOfert } from '../../../reducers/users'
-import { orderTravellers } from '../../../db'
 
 
 function OfertTravel() {
-
+    
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [data, setData] = useState({
         seguro: "",
         comentarios: ""
     });
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const state = useSelector((state) => state.order)
 
     const inputForm = (e) => {
         setData({
@@ -27,9 +25,10 @@ function OfertTravel() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(addOfert(data))
-        orderTravellers(state).then(navigate(`/Seguimiento`));
+        dispatch(addOfert(data));
+        navigate(`/CheckPack`);
     };
+    
     return (
         <>
             <h1>Haz una oferta al viajero</h1>
