@@ -1,9 +1,9 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs, setDoc, doc, getDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, addDoc, query, where } from "firebase/firestore"
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import { FacebookAuthProvider} from 'firebase/auth'
+import { FacebookAuthProvider } from 'firebase/auth'
 
 
 const firebaseConfig = {
@@ -16,49 +16,53 @@ const firebaseConfig = {
 };
 
 
-/* const analytics = getAnalytics(app); */
+
 export const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 export const auth = getAuth(app)
 
-export async function getTravellers() {
-  const miTravellers = collection(firestore, "Travellers");
-  let snapshotDB = await getDocs(miTravellers);
-  let dataDocs = snapshotDB.docs.map((documento) => {
-    return { ...documento.data(), id: documento.id }
-  });
-  return dataDocs
-}
 
 
 // registro google
 export const singGoogle = async () => {
-    const provider = new GoogleAuthProvider()
+  const provider = new GoogleAuthProvider()
 
-    try {
-        const credentials =  await signInWithPopup(auth, provider)
-        alert("bienvendio" + " " + credentials.user.displayName)
-        
-    } catch (error) {
-        console.log(error.message)
-        
-    }
+  try {
+    const credentials = await signInWithPopup(auth, provider)
+    alert("bienvendio" + " " + credentials.user.displayName)
+  } catch (error) {
+    console.log(error.message)
+  }
 }
 
 // registro facebook
 export const singFacebook = async () => {
-   const providerF = new FacebookAuthProvider()
-   
-   try {
-    const credentials =  await signInWithPopup(auth, providerF)
+  const providerF = new FacebookAuthProvider()
+
+  try {
+    const credentials = await signInWithPopup(auth, providerF)
     alert("bienvendio" + " " + credentials.user.email)
-    
-} catch (error) {
+  } catch (error) {
     console.log(error.message)
-    
+  }
 }
 
 
+export async function orderTravellers(orderTravel) {
+  const collectionRef = collection(firestore, "orders");
+  let rta = await addDoc(collectionRef, orderTravel)
+  return rta.id;
+};
+
+export async function getTravellerss(destino, origen) {
+  const miCollection = collection(firestore, "Travellers");
+  const destiny = query(miCollection, where("destino", "==", destino));
+  const source = query(miCollection, where("origen", "==", origen));
+  const rta = await getDocs(destiny, source);
+  let dataDocs = rta.docs.map((documento) => {
+    return { ...documento.data(), id: documento.id }
+  });
+  return dataDocs;
 }
 
 // export async function orderDetail(id) {

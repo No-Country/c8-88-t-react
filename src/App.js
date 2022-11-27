@@ -8,7 +8,7 @@ import OfertTravel from './components/Pages/Envios/OfertTravel';
 import Envios from './components/Pages/Envios/Envios';
 import Cuenta from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
-
+import CheckPack from './components/Pages/Envios/CheckPack';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
       <Route path="/envios" element={<Envios />} />
       <Route path="/chooseTravel" element={<ChooseTravel />}></Route>
       <Route path="/ofertTravel" element={<OfertTravel />}></Route>
+      <Route path="/checkPack" element={<CheckPack />}></Route>
       <Route path="/seguimiento" element={<Seguimiento />} />
       <Route path="/cuenta" element={<Cuenta /> } />
     </Routes>

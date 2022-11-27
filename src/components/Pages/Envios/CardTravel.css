@@ -1,0 +1,18 @@
+.labelTravel {
+    width: max-content;
+    height: max-content;
+}
+
+.labelTravel .checkbox {
+    opacity: 1;
+}
+
+.cardTravel {
+    width: 15rem;
+    height: 12rem;
+}
+
+.imgTravel{
+    width: 15rem;
+    height: 5rem;
+}

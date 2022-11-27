@@ -1,12 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-
+import { combineReducers, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     email: "",
     fullName: "",
     password: ""
 
+}
+
+const initialStateOrder = {
+    origen: "",
+    destino: "",
+    inicio: "",
+    final: "",
+    alto: "",
+    largo: "",
+    ancho: "",
+    peso: "",
+    objeto: "",
+    travel: "",
+    oferta: "",
+    seguro: "",
+    comentarios: ""
 }
 
 export const userSlice = createSlice({
@@ -23,12 +37,45 @@ export const userSlice = createSlice({
             state.fullName = ""
             state.password = ""
         }
-
-
     }
-
 })
 
-export const {addUser, unsetUser} = userSlice.actions;
-export default userSlice.reducer;
+const orderSlice = createSlice({
+    name: "user",
+    initialState: initialStateOrder,
+    reducers: {
+        addHome: (state, action) => {
+            state.origen = action.payload.origen;
+            state.destino = action.payload.destino;
+            state.inicio = action.payload.inicio;
+            state.final = action.payload.final;
+        },
+        addEnvios: (state, action) => {
+            state.alto = action.payload.alto;
+            state.largo = action.payload.largo;
+            state.ancho = action.payload.ancho;
+            state.peso = action.payload.peso;
+            state.objeto = action.payload.objeto;
+        },
+        addTravel: (state, action) => {
+            state.travel = action.payload.travel;
+        },
+        addOfert: (state, action) => {
+            state.seguro = action.payload.seguro;
+            state.comentarios = action.payload.comentarios;
+            state.oferta = action.payload.oferta;
+        }
+    }
+});
+
+export const { addUser, unsetUser } = userSlice.actions;
+export const { addHome, addEnvios, addTravel, addOfert } = orderSlice.actions;
+
+const reducer = combineReducers({
+    user: userSlice.reducer,
+    order: orderSlice.reducer
+});
+
+export default reducer
+
 
