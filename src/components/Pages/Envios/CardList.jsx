@@ -1,7 +1,8 @@
 import React from 'react'
 import CardTravel from './CardTravel'
 
-function CardList({ data }) {
+function CardList({ data, travelId }) {
+
     return (
         <>
             {data.map((item) => {
@@ -12,6 +13,7 @@ function CardList({ data }) {
                     img={item.img}
                     valoracion={item.Valoracion}
                     id={item.id}
+                    chooseTravel={travelId}
                 />
             })}
         </>

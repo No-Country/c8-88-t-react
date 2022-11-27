@@ -11,7 +11,6 @@ function CheckPack() {
 
     const navigate = useNavigate()
     const state = useSelector((state) => state.order);
-    console.log(state);
 
     function handleSubmit(e) {
         e.preventDefault()

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Container, FormLabel, Row, Col, FormCheck, FormControl, Form } from 'react-bootstrap'
-import FormRange from 'react-bootstrap/esm/FormRange'
 import { useNavigate } from 'react-router-dom'
 import ButtonNext from './ButtonNext'
 import { useDispatch } from 'react-redux'
@@ -8,15 +7,15 @@ import { addOfert } from '../../../reducers/users'
 
 
 function OfertTravel() {
-
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+    
     const [data, setData] = useState({
         oferta: "",
         seguro: "",
         comentarios: ""
     });
-
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
     const inputForm = (e) => {
         setData({
             ...data,
