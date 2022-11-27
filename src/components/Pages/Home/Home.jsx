@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Carrusel } from "./Carrusel";
 import { FormDataPack } from "./FormDataPack";
 import "./Home.css"
-// import { EnviosEnCurso } from "./EnvíosEnCurso/EnviosEnCurso";
-import { DestinosBuscados } from "./EnvíosEnCurso/DestinosBuscados/DestinosBuscados";
+import { EnviosEnCurso } from "./EnvíosEnCurso/EnviosEnCurso";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -39,8 +39,7 @@ const Home = () => {
           <FormDataPack />
         </div>
         <div className="wrapper_envios">
-          {/* <EnviosEnCurso/> */}
-          <DestinosBuscados/>
+          <EnviosEnCurso/>
         </div>
       </div>
     </>
