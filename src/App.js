@@ -10,6 +10,7 @@ import Envios from './components/Pages/Envios/Envios';
 import Cuenta from './components/Pages/Cuenta/Cuenta';
 
 
+
 function App() {
   return (<>
     <Nav />
@@ -20,7 +21,7 @@ function App() {
       <Route path="/chooseTravel" element={<ChooseTravel />}></Route>
       <Route path="/ofertTravel" element={<OfertTravel />}></Route>
       <Route path="/seguimiento" element={<Seguimiento />} />
-      <Route path="/cuenta" element={<Cuenta />} />
+      <Route path="/cuenta" element={<Cuenta /> } />
     </Routes>
   </>);
 }

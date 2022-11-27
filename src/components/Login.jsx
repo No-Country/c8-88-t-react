@@ -68,7 +68,7 @@ function Login() {
         <label>
           Rol:
           <select id="rol">
-            <option value="admin">Viajero</option>
+            <option value="viajero">Viajero</option>
             <option value="user">Usuario</option>
           </select>
         </label>

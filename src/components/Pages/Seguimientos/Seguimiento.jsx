@@ -1,40 +1,54 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import React, { useState,  useEffect  } from 'react'
+import { getdoc, getDocs, collection, doc } from 'firebase/firestore';
+import firestore from '../../../db/index';
+
+
 
 const Seguimiento = () => {
-
-     const [ date, setDate ] = useState({});
-     const { id } = useParams();
     
+    const [order , setOrder] = useState([]) 
 
 
-    useEffect(()=> {
-        const queryDb = getFirestore()
-        const queryDoc = doc(queryDb, 'orders', 'gpEivyjXmrDgCE7MaJ60')
-        getDoc(queryDoc)
-            .then(res => setDate({id: res.id, ...res.data()}))
+    const orderCollections = collection(firestore, 'orders')
+
+    const getOrder = async () => {
+        const data = await getDocs(orderCollections)
+        setOrder(
+            data.docs.map((doc)=> ({...doc.data(), id: doc.id}))
+        )
+    
+    }
+
+    useEffect(() => {
+        getOrder()
+    }, [])
             
 
-    }, [])
+
+        
+    return (
+        <>
+       <div>
+        {order.map((orders) => (
+           <div>
+            <h1 key= {orders.id}>ID Order: {orders.id}</h1>
+           <h5>destino: {orders.destino}</h5>
+           <h5>inicio: {orders.inicio}</h5>
+           <h5>final: {orders.final}</h5>
+           <h5>oferta: {orders.oferta}</h5>
+           <h5>objeto: {orders.objeto}</h5>
+           <h5>seguro:{orders.seguro}</h5>
+           </div>
+        ))}
+       </div>
+        
+    </>
+    )
+      
+            
+        
     
       
-        return (
-            <>
-            <h1>viajero: {date.viajero}</h1>
-            <h2>id seguimiento: {date.id}</h2>
-            <h5>destino: {date.destino}</h5>
-            <h5>origen: {date.origen}</h5>
-            <h5>objeto: {date.objeto}</h5>
-            <h5>alto: {date.alto}</h5>
-            <h5>ancho: {date.ancho}</h5>
-            <h5>largo: {date.largo}</h5>
-            <h5>peso: {date.peso}</h5>
-            
-        </>
-        )
-          
        
       
 

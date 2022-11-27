@@ -6,6 +6,7 @@ import { Carrusel } from "./Carrusel";
 import { FormDataPack } from "./FormDataPack";
 import "./Home.css"
 
+
 const Home = () => {
   const navigate = useNavigate();
 
