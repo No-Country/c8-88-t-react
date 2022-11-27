@@ -1,0 +1,40 @@
+.wrapper_footer{
+    width: 100%;
+    height: 120px;
+    color: black;
+    background-color: rgb(181, 181, 181);
+}
+.wrapper_footer a{
+    color: rgb(155, 29, 134);
+}
+.footer{
+    width: 100%;
+    max-width: 1366px;
+    display: gird;
+}
+
+.footer .footer_rrss{
+    width: clamp();
+}
+.copyright{
+    width: 100%;
+
+}
+.copyright > p:first-child{
+    width: 30%;
+    font-size: .9rem;
+}
+
+.copyright .wrapper_autores > div{
+    width: 30%;
+}
+.copyright .wrapper_autores > div:first-child{
+    width: 20%;
+}
+.copyright .wrapper_autores > div p{
+    font-size: .9rem;
+
+}
+.copyright .wrapper_autores .autores {
+    font-size: .85rem;
+}

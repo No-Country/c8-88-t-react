@@ -43,10 +43,11 @@ function Login() {
     if (isRegistrando) {
       // registrar
       registrarUsuario(email, password, rol);
+      navigate('/')
     } else {
       // login
       signInWithEmailAndPassword(auth, email, password);
-      navigate('/cuenta')
+      navigate('/')
     }
   }
 
