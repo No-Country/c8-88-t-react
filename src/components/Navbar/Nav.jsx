@@ -13,7 +13,7 @@ export const Nav = () => {
     }
 
     return (<>
-        <nav className="navbar navbar-dark bg-primary navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
+        <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
             <Link  className="navbar-brand logo_menu" to="/">
                 <img src="https://www.designevo.com/res/templates/thumb_small/purple-earth-and-white-airplane.webp" alt="Logotipo" />
             </Link>
