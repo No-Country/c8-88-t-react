@@ -33,7 +33,7 @@ export const FormDataPack = () => {
     return (<>
         <form className="row g-4 w-100" onSubmit={handleSubmit}>
             <div className=" col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Origen</label>
+                <label className="form-label fw-bold">Origen</label>
                 <input
                     type="text"
                     className="form-control"
@@ -44,7 +44,7 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Destino</label>
+                <label className="form-label fw-bold">Destino</label>
                 <input
                     type="text"
                     className="form-control"
@@ -55,7 +55,7 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Fecha Inicio</label>
+                <label className="form-label fw-bold">Fecha Inicio</label>
                 <input
                     type="date"
                     className="form-control"
@@ -66,7 +66,7 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Fecha Final</label>
+                <label className="form-label fw-bold">Fecha Final</label>
                 <input
                     type="date"
                     className="form-control"
