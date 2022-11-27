@@ -34,9 +34,6 @@
     background-color: var(--color-primary);
     border: 1px solid transparent;
 }
-/* .wrapper_home .wrapper_envios .wrapper_cards > *{
-    margin-right: 1rem;
-} */
 .form-label{
     font-weight: 500;
 }

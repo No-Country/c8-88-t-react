@@ -1,10 +1,10 @@
 import React from "react";
 import { singFacebook, singGoogle } from "../../../db/index";
 import { useNavigate } from "react-router-dom";
-import { CardEnvios } from "./Card/CardEnvios";
 import { Carrusel } from "./Carrusel";
 import { FormDataPack } from "./FormDataPack";
 import "./Home.css"
+import { EnviosEnCurso } from "./EnvíosEnCurso/EnviosEnCurso";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -38,11 +38,7 @@ const Home = () => {
           <FormDataPack />
         </div>
         <div className="wrapper_envios">
-          <h5 className="mb-3" >Envíos en curso</h5>
-          <div className="wrapper_cards d-flex w-100 flex-wrap">
-            <CardEnvios destino="Barcelona" dias={3} />
-            <CardEnvios destino="Madrid" dias={30} />
-          </div>
+          <EnviosEnCurso/>
         </div>
       </div>
     </>
