@@ -12,8 +12,8 @@
     padding: 2rem 0;
     border-radius: 15px;
     width: clamp(320px, 85vw, 1366px);
-    min-height: 300px;
-    max-height: 470px;
+    min-height: 280px;
+    max-height: 500px;
     background-color: var(--color-secondary);
 }
 .wrapper_home .wrapper_envios{
@@ -37,3 +37,6 @@
 /* .wrapper_home .wrapper_envios .wrapper_cards > *{
     margin-right: 1rem;
 } */
+.form-label{
+    font-weight: 500;
+}
