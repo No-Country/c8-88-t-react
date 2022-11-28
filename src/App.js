@@ -9,6 +9,8 @@ import Envios from './components/Pages/Envios/Envios';
 import Cuenta from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
 import CheckPack from './components/Pages/Envios/CheckPack';
+import { Auth } from './components/Pages/Auth/Auth';
+
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
       <Route path="/checkPack" element={<CheckPack />}></Route>
       <Route path="/seguimiento" element={<Seguimiento />} />
       <Route path="/cuenta" element={<Cuenta /> } />
+      <Route path="/auth" element={<Auth/>}/>
     </Routes>
     <Footer/>
   </>);

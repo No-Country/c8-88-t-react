@@ -30,7 +30,9 @@ export const FormDataPack = () => {
     return (<>
         <form className="row g-4 w-100" onSubmit={handleSubmit}>
             <div className=" col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Origen</label>
+                <label className="form-label">
+                    Origen <i className="bi bi-geo-alt fs-5 ms-2"></i>
+                </label>
                 <input
                     type="text"
                     className="form-control"
@@ -41,7 +43,9 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Destino</label>
+                <label className="form-label ">
+                    Destino <i className="bi bi-geo-alt fs-5 ms-2"></i>
+                </label>
                 <input
                     type="text"
                     className="form-control"
@@ -52,7 +56,9 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Fecha Inicio</label>
+                <label className="form-label">
+                    Fecha Inicio <i className="bi bi-calendar2 fs-5 ms-2"></i>
+                </label>
                 <input
                     type="date"
                     className="form-control"
@@ -63,7 +69,9 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
-                <label className="form-label">Fecha Final</label>
+                <label className="form-label">
+                    Fecha Final <i className="bi bi-calendar2 fs-5 ms-2"></i>
+                </label>
                 <input
                     type="date"
                     className="form-control"
@@ -74,7 +82,7 @@ export const FormDataPack = () => {
                 />
             </div>
             <div className="w-100 d-flex justify-content-end align-items-center flex-nowrap">
-                <button className="btn btn-primary me-5 me-md-3">Siguiente</button>
+                <button className="btn btn-primary me-5  me-md-3">Buscar</button>
             </div>
         </form>
     </>)

@@ -1,3 +1,13 @@
+:root{
+    --color-primary: #371B58;
+    --color-secondary: #63BCAC;
+    --color-white: #ffffff;
+}
+
+.navbar{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
 .navbar .logo_menu img{
     width: 120px;
     height: 70px;
@@ -7,4 +17,20 @@
 }
 .navbar .wrapper_enlaces .navbar-nav{
     width: 100%;
+}
+.nav-link{
+    color: var(--color-white);
+}
+.nav-link:hover{
+    color: var(--color-secondary);
+}
+.hamburger-inner,
+.hamburger-inner:before,
+.hamburger-inner:after,
+.hamburger.is-active .hamburger-inner:after,
+.hamburger.is-active .hamburger-inner:before{
+    background-color: var(--color-secondary);
+}
+.navbar-toggler:focus{
+    box-shadow: 0 0 0 var(--color-secondary);
 }

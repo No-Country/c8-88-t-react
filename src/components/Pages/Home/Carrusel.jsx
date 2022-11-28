@@ -1,15 +1,27 @@
+import image1 from "../../../assets/carrusel/image1.png";
+import image2 from "../../../assets/carrusel/image2.png";
+import image3 from "../../../assets/carrusel/image3.png";
+import image4 from "../../../assets/carrusel/image4.png";
+import image5 from "../../../assets/carrusel/image5.png";
+
 export const Carrusel = () => {
     return (<>
         <div id="carouselExampleControls" className="carousel slide h-100" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://api.lorem.space/image/movie?w=450&amp;amp;amp;amp;h=110" className="d-block w-100" alt="..."/>
+                    <img src={image1} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/game?w=450&amp;amp;amp;amp;h=110" className="d-block w-100" alt="..."/>
+                    <img src={image2} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src="https://api.lorem.space/image/face?w=450&amp;amp;amp;amp;h=110" className="d-block w-100" alt="..."/>
+                    <img src={image3} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
+                </div>
+                <div className="carousel-item">
+                    <img src={image4} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
+                </div>
+                <div className="carousel-item">
+                    <img src={image5} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
             </div>
 

@@ -13,7 +13,7 @@ export const Nav = () => {
     }
 
     return (<>
-        <nav className="navbar navbar-dark bg-primary navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
+        <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
             <Link  className="navbar-brand logo_menu" to="/">
                 <img src="https://www.designevo.com/res/templates/thumb_small/purple-earth-and-white-airplane.webp" alt="Logotipo" />
             </Link>
@@ -30,6 +30,9 @@ export const Nav = () => {
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
                     <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
+                </div>
+                <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5">
+                    <p className="mb-0 mx-auto">Bienvenido Usuario</p>
                 </div>
             </div>
 
