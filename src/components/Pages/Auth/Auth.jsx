@@ -24,12 +24,10 @@ export const Auth = () => {
     return (<>
         <div className="w-100" >
             <div className="wrapper_auth mx-auto  d-flex gap-2">
-
                 <div className="w-50 d-flex flex-column justify-content-center gap-5 align-items-center">
                     <p className="h5 mx-auto text-center m-0">Realiza envíos al exterior mediante viajeros</p>
                     <img  className="mx-auto" src={login} alt="Envía un paquete" />
                 </div>
-
                 <div className="w-50 d-flex flex-column justify-content-center gap-5 align-items-center">
                     <span></span>
                     <div className="wrapper_btn d-flex flex-column justify-content-between">
@@ -41,11 +39,8 @@ export const Auth = () => {
 
                         <button className="btn-login w-100" onClick={handleLogin}>Login</button>
                     </div>
-                    
-
                 </div>
             </div>
         </div>
-        
     </>)
 }
