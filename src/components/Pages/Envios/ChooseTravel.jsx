@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Form, Row } from "react-bootstrap"
-import { getTravellers, getTravellerss } from '../../../db'
+import { getTravellerss } from '../../../db'
 import { useNavigate } from "react-router-dom"
-import ButtonNext from './ButtonNext'
-import CardList from './CardList'
+import ButtonNext from './Buttons/ButtonNext';
+import CardList from './CardTravel/CardList'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTravel } from '../../../reducers/users';
 

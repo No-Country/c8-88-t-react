@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button, Container, Row } from "react-bootstrap"
+import './ButtonNext.css'
 
 function ButtonNext() {
     return (
-        <Container className="mt-5">
-            <Row md="auto" className="justify-content-end">
+        <Container className="wrapper_button">
+            <Row className="justify-content-end">
                 <Button
+                    className="button_next"
                     type="submit"
-                    variant="secondary"
-                    size="lg">
+                >
                     Siguiente
                 </Button>
             </Row>

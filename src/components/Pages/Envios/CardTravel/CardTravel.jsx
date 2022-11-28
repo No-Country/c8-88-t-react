@@ -2,7 +2,6 @@ import React from 'react'
 import { Card, Col, FormLabel, FormCheck } from 'react-bootstrap'
 import "./CardTravel.css"
 
-
 function CardTravel({ img, nombre, apellido, valoracion, id, chooseTravel }) {
 
     return (
@@ -12,7 +11,7 @@ function CardTravel({ img, nombre, apellido, valoracion, id, chooseTravel }) {
                     className="checkbox"
                     type="radio"
                     name="travel"
-                    onClick={() =>{chooseTravel(id)}}
+                    onClick={() => { chooseTravel(id) }}
                 />
                 <Card className="cardTravel">
                     <Card.Img variant="top" src={img} className="imgTravel" />

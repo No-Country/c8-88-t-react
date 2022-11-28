@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Col, Container, Form, FormCheck, FormControl, FormLabel, Row } from "react-bootstrap"
-import ButtonNext from "./ButtonNext"
+import ButtonNext from "./Buttons/ButtonNext"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { addEnvios } from "../../../reducers/users";
+import RadioButtonGroup from "./Buttons/RadioButtonGroup"
+import './Envios.css'
 
 function Envios() {
 
@@ -22,115 +24,128 @@ function Envios() {
             ...data,
             [e.target.name]: e.target.value
         })
-};
+    };
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addEnvios(data));
-    navigate(`/ChooseTravel`)
-};
+    const selectWeight = (value) => {
+        setData({
+            ...data,
+            peso: value
+        })
+    };
+    console.log(data.peso)
 
-return (
-    <>
-        <h1>Enviar</h1>
-        <h3>Por favor, cargar el detalle del envío</h3>
-        <Form onSubmit={handleSubmit}>
-            <Container className="mt-5 bg-secondary">
-                <Row className="mb-3">
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(addEnvios(data));
+        navigate(`/ChooseTravel`)
+    };
+
+
+    return (
+        <>
+            <Container className="wrapper_title" fluid="sm">
+                <Row>
                     <Col>
-                        <h4>Tamaño y peso del paquete</h4>
-                    </Col>
-                </Row>
-                <Row className="mb-3">
-                    <FormLabel column lg="auto">Alto:</FormLabel>
-                    <Col xs={1}>
-                        <FormControl
-                            type="number"
-                            name="alto"
-                            value={data.alto}
-                            onChange={inputForm}
-                        />
-                    </Col>
-                    <FormLabel column lg="auto">Largo:</FormLabel>
-                    <Col xs={1}>
-                        <FormControl
-                            type="number"
-                            name="largo"
-                            value={data.largo}
-                            onChange={inputForm}
-                        />
-                    </Col>
-                    <FormLabel column lg="auto">Ancho:</FormLabel>
-                    <Col xs={1}>
-                        <FormControl
-                            type="number"
-                            name="ancho"
-                            value={data.ancho}
-                            onChange={inputForm}
-                        />
-                    </Col>
-                </Row>
-                <Row className="mb-5">
-                    <Col>
-                        <FormLabel>Peso:</FormLabel>
-                        <FormCheck
-                            inline
-                            label="Menor a 1kg"
-                            name="peso"
-                            type="radio"
-                            value="menor a 1kg"
-                            onChange={inputForm}
-                        />
-                        <FormCheck
-                            inline
-                            label="De 1 a 3kg"
-                            name="peso"
-                            type="radio"
-                            value="de 1 a 3kg"
-                            onChange={inputForm}
-                        /><FormCheck
-                            inline
-                            label="De 3 a 5kg"
-                            name="peso"
-                            type="radio"
-                            value="de 3 a 5kg"
-                            onChange={inputForm}
-                        />
+                        <h4>Enviar</h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4 className="mb-3">Tipo de objeto</h4>
-                        <FormCheck
-                            inline
-                            label="Documento"
-                            name="objeto"
-                            type="radio"
-                            value="documento"
-                            onChange={inputForm}
-                        />
-                        <FormCheck
-                            inline
-                            label="Objeto personal"
-                            name="objeto"
-                            type="radio"
-                            value="objeto personal"
-                            onChange={inputForm}
-                        /><FormCheck
-                            inline
-                            label="Indumentaria"
-                            name="objeto"
-                            type="radio"
-                            value="indumentaria"
-                            onChange={inputForm}
-                        />
+                        <h5>Por favor, cargar el detalle del envío</h5>
                     </Col>
                 </Row>
             </Container>
-            <ButtonNext />
-        </Form>
-    </>
-)
+            <Form onSubmit={handleSubmit}>
+                <Container fluid="sm" className="wrapper_envios_form">
+                    <Row className="m-3">
+                        <Col>
+                            <h5>Tamaño y peso del paquete</h5>
+                        </Col>
+                    </Row>
+                    <Row className="m-3 row_control">
+                        <FormLabel column lg="auto">Alto:</FormLabel>
+                        <Col xs={2}>
+                            <FormControl
+                                type="number"
+                                name="alto"
+                                value={data.alto}
+                                onChange={inputForm}
+                                placeholder="cm"
+                                min="0"
+                                required
+                            />
+                        </Col>
+                        <FormLabel column lg="auto">Largo:</FormLabel>
+                        <Col xs={2}>
+                            <FormControl
+                                type="number"
+                                name="largo"
+                                value={data.largo}
+                                onChange={inputForm}
+                                placeholder="cm"
+                                min="0"
+                                required
+                            />
+                        </Col>
+                        <FormLabel column lg="auto">Ancho:</FormLabel>
+                        <Col xs={2}>
+                            <FormControl
+                                type="number"
+                                name="ancho"
+                                value={data.ancho}
+                                onChange={inputForm}
+                                placeholder="cm"
+                                min="0"
+                                required
+                            />
+                        </Col>
+                    </Row>
+                    <Row className="m-3">
+                        <Col>
+                            <FormLabel>Peso:</FormLabel>
+                            <RadioButtonGroup
+                                selectRadio={selectWeight}
+                                check={data.peso}
+                            />
+                        </Col>
+                    </Row>
+                    <Row className="m-3">
+                        <Col>
+                            <h5>Tipo de objeto</h5>
+                            <FormCheck
+                                inline
+                                label="Documento"
+                                name="objeto"
+                                type="radio"
+                                value="documento"
+                                onChange={inputForm}
+                                reverse
+                            />
+                            <FormCheck
+                                inline
+                                label="Objeto personal"
+                                name="objeto"
+                                type="radio"
+                                value="objeto personal"
+                                onChange={inputForm}
+                                reverse
+                            />
+                            <FormCheck
+                                inline
+                                label="Indumentaria"
+                                name="objeto"
+                                type="radio"
+                                value="indumentaria"
+                                onChange={inputForm}
+                                reverse
+                            />
+                        </Col>
+                    </Row>
+                </Container>
+                <ButtonNext />
+            </Form>
+        </>
+    )
 }
 
 export default Envios

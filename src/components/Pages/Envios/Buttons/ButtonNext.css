@@ -1,0 +1,13 @@
+.wrapper_button {
+    margin: 2rem 0 1.5rem 0;
+}
+
+.button_next {
+    max-width: 177px;
+    background: #747A80;
+    border-radius: 12px;
+}
+
+.button_next:hover {
+    background: #747A80;
+}

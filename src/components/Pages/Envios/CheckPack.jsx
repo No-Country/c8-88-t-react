@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import ButtonNext from './ButtonNext';
+import ButtonNext from './Buttons/ButtonNext';
 import { orderTravellers } from '../../../db'
 
 

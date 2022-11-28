@@ -1,0 +1,18 @@
+.btn-radio {
+    color: black;
+    background: #C1A1E7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.btn-radio:hover{
+    background: #C1A1E7 !important;
+    color: black !important;
+    border: 1px solid #C1A1E7 !important;
+}
+
+.btn-check:checked+.btn {
+    background: #371B58;
+    border: 2px solid #C1A1E7;
+}
