@@ -9,19 +9,19 @@ export const Carrusel = () => {
         <div id="carouselExampleControls" className="carousel slide h-100" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={image1} className="d-block w-100" alt="TravelPack tu mejor opción"/>
+                    <img src={image1} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src={image2} className="d-block w-100" alt="TravelPack tu mejor opción"/>
+                    <img src={image2} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src={image3} className="d-block w-100" alt="TravelPack tu mejor opción"/>
+                    <img src={image3} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src={image4} className="d-block w-100" alt="TravelPack tu mejor opción"/>
+                    <img src={image4} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
                 <div className="carousel-item">
-                    <img src={image5} className="d-block w-100" alt="TravelPack tu mejor opción"/>
+                    <img src={image5} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
             </div>
 

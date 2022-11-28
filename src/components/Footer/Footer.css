@@ -23,7 +23,6 @@
 }
 .footer{
     max-width: 1366px;
-    display: gird;
 }
 .footer .footer_rrss{
     width: clamp();
