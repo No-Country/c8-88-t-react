@@ -6,12 +6,6 @@ import { addUser } from '../reducers/users';
 import { regisEmail } from '../db';
 
 
-
-
-
-
-
-
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -30,7 +24,7 @@ function Login() {
     e.preventDefault();
     dispatch(addUser(user));
     regisEmail(user.email, user.password)
-    navigate("/cuenta");
+    navigate("/");
   };
 
   return (

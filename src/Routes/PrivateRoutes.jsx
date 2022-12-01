@@ -4,7 +4,7 @@ import { selectUser } from "../reducers/users/index";
 function PrivateRoute({ children }) {
   const isAuthenticated = useSelector(selectUser);
 
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/auth" />;
 }
 
 export default PrivateRoute;

@@ -19,7 +19,7 @@ export const Auth = () => {
 
     const handleLogin = () => navigate("/login");
 
-    const handleEmail = () => alert("Registro con email en proceso...");
+    const handleEmail = () => navigate("/login");
 
     return (<>
         <div className="w-100" >

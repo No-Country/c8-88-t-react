@@ -27,11 +27,6 @@ export const FormDataPack = () => {
         navigate(`/chooseTravel`);
     };
 
-    const goAuth = (e) => {
-        e.preventDefault();
-        navigate(`/Auth`);
-    }
-
     return (<>
         <form className="row g-4 w-100" onSubmit={handleSubmit}>
             <div className=" col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
@@ -88,7 +83,6 @@ export const FormDataPack = () => {
             </div>
             <div className="w-100 d-flex justify-content-end align-items-center flex-nowrap">
                 <button
-                    onClick={ goAuth }
                     className="btn btn-primary me-5  me-md-3">
                     Buscar
                 </button>
