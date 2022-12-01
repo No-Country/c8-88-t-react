@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../../assets/logos/logo travelpack.png";
 import "./Nav.css"
 
 export const Nav = () => {
@@ -15,7 +16,7 @@ export const Nav = () => {
     return (<>
         <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
             <Link  className="navbar-brand logo_menu" to="/">
-                <img src="https://www.designevo.com/res/templates/thumb_small/purple-earth-and-white-airplane.webp" alt="Logotipo" />
+                <img src={logo} alt="Logotipo de TravelPack" />
             </Link>
 
             <button onClick={()=> isActive()} className= {`navbar-toggler hamburger hamburger--spring ${active ? "is-active" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
