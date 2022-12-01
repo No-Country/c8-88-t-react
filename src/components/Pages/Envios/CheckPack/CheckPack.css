@@ -1,0 +1,18 @@
+.wrapper_payment {
+    margin: 2rem 0 0 22rem;
+}
+
+.wrapper_payment .wrapper_inputs{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #C1A1E7;
+    padding-bottom: 1rem;
+}
+
+.wrapper_payment .form-check-label {
+    margin-left: 1.5rem;
+}
+
+.wrapper_payment img{
+    margin-left: 1.5rem;
+}

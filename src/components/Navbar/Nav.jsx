@@ -23,7 +23,6 @@ export const Nav = () => {
                         <span className="hamburger-inner"></span>
                     </span>
             </button>
-
             <div className="collapse navbar-collapse wrapper_enlaces" id="navbarNavAltMarkup">
                 <div className="navbar-nav d-lg-flex justify-content-lg-evenly fw-500">
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
@@ -36,7 +35,6 @@ export const Nav = () => {
                     <p className="mb-0 mx-auto">Bienvenido Usuario</p>
                 </div>
             </div>
-
         </nav>
     </>)
 }

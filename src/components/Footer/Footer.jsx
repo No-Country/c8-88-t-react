@@ -10,9 +10,9 @@ export const Footer = () => {
 
                     <div className="footer_rrss">
                         <ul className="d-flex  justify-content-evenly">
-                            <li><a href="https://www.facebook.com" target="blank"><i class="bi bi-facebook fs-6"></i></a></li>
-                            <li><a href="https://www.instagram.com" target="blank"><i class="bi bi-instagram fs-6" ></i></a></li>
-                            <li><a href="https://www.twitter.com" target="blank"><i class="bi bi-twitter fs-6"></i></a></li>
+                            <li><a href="https://www.facebook.com" target="blank"><i className="bi bi-facebook fs-6"></i></a></li>
+                            <li><a href="https://www.instagram.com" target="blank"><i className="bi bi-instagram fs-6" ></i></a></li>
+                            <li><a href="https://www.twitter.com" target="blank"><i className="bi bi-twitter fs-6"></i></a></li>
                         </ul>
                     </div>
 

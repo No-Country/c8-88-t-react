@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Container, FormLabel, Row, Col, FormCheck, FormControl, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import ButtonNext from './ButtonNext'
+import Buttons from '../Buttons/Buttons';
 import { useDispatch } from 'react-redux'
-import { addOfert } from '../../../reducers/users'
+import { addOfert } from '../../../../reducers/users'
 
 
 function OfertTravel() {
-    
+
+    const [checked, setChecked] = useState(false)
     const [data, setData] = useState({
         oferta: "",
         seguro: "",
@@ -15,13 +16,21 @@ function OfertTravel() {
     });
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    
+
     const inputForm = (e) => {
-        setData({
-            ...data,
+        setData(currentValue => ({
+            ...currentValue,
             [e.target.name]: e.target.value,
-        })
+        }))
     };
+
+    const insurance = () => {
+        setChecked(!checked)
+        setData(currentValue => ({
+            ...currentValue,
+            seguro: !checked,
+        }))
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -31,30 +40,43 @@ function OfertTravel() {
 
     return (
         <>
-            <h1>Haz una oferta al viajero</h1>
+            <Container className="wrapper_title" fluid="sm">
+                <Row>
+                    <Col>
+                        <h4>Enviar</h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <h5>Haz una oferta al viajero</h5>
+                    </Col>
+                </Row>
+            </Container>
             <Form onSubmit={handleSubmit}>
-                <Container className="mt-5 bg-secondary">
-                    <Row className="mb-3">
+                <Container className="wrapper_envios_form">
+                    <Row className="m-3">
                         <FormLabel column lg="auto">Oferta ofrecida:</FormLabel>
-                        <Col xs={1}>
+                        <Col xs={2}>
                             <FormControl
+                                required
                                 type="number"
                                 name="oferta"
                                 value={data.oferta}
                                 onChange={inputForm}
+                                placeholder="USD"
                             />
                         </Col>
                     </Row>
-                    <Row xs="auto" className="mb-3 justify-content-start">
+                    <Row xs="auto" className="m-4">
                         <FormCheck
-                            label="Necesitas seguro"
+                            label="¿Necesitas seguro?"
                             name="seguro"
-                            onChange={inputForm}
-                            value="true"
+                            checked={checked}
+                            onChange={() => insurance()}
                             reverse
                         />
                     </Row>
-                    <Row xs="auto">
+                    <Row xs="auto" className="m-3">
                         <FormLabel>Datos adicionales:</FormLabel>
                         <Col>
                             <FormControl
@@ -62,12 +84,12 @@ function OfertTravel() {
                                 name="comentarios"
                                 value={data.comentarios}
                                 onChange={inputForm}
-                                style={{ height: '150px', width: '500px' }}
+                                style={{ width: '26rem', height: '6rem' }}
                             />
                         </Col>
                     </Row>
                 </Container>
-                <ButtonNext />
+                <Buttons back="/chooseTravel" children="Atrás"/>
             </Form>
         </>
     )

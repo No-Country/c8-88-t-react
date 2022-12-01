@@ -1,0 +1,35 @@
+.wrapper_title {
+    max-width: 56rem;
+    margin-top: 1rem;
+}
+
+.wrapper_title h4 {
+    margin-bottom: 2rem;
+}
+
+.wrapper_envios_form {
+    border: 1px solid #C1A1E7;
+    border-radius: 1.12rem;
+    max-width: 50rem;
+    margin-top: 1rem;
+}
+
+.wrapper_envios_form h5 {
+    margin-bottom: 1.2rem;
+}
+
+
+.wrapper_envios_form .row_control .form-control {
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.wrapper_envios_form .form-check {
+    margin-right: 3.1rem;
+}
+
+.wrapper_envios_form .row_control .form-label {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
