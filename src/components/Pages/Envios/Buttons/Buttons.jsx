@@ -3,7 +3,7 @@ import { Button, Container, Row } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom'
 import './Buttons.css'
 
-function Buttons({ back }) {
+function Buttons({ back, children }) {
 
     const navigate = useNavigate()
     const backUrl = () => {
@@ -16,7 +16,7 @@ function Buttons({ back }) {
                 <Button
                     className="button_back"
                     onClick={() => backUrl()}>
-                    Atrás
+                    {children}
                 </Button>
                 <Button
                     className="button_next"

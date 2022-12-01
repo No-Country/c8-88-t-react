@@ -147,7 +147,7 @@ function FirstForm() {
                             </Col>
                         </Row>
                 </Container>
-                <Buttons back="/chooseTravel" />
+                <Buttons back="/chooseTravel" children="Atrás"/>
             </Form>
         </>
     )

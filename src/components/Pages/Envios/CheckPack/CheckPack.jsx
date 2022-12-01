@@ -22,7 +22,7 @@ function CheckPack() {
     function handleSubmit(e) {
         e.preventDefault()
         orderTravellers(state)
-        navigate(`/Seguimiento`);
+        navigate(`/OrderOk`)
     };
 
     return (
@@ -102,7 +102,7 @@ function CheckPack() {
                         </Row>
                     </Col>
                 </Row>
-                <Buttons back="/ofertTravel" />
+                <Buttons back="/ofertTravel" children="Atrás"/>
             </Form>
         </>
     )

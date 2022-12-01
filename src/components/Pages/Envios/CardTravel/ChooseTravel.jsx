@@ -44,7 +44,7 @@ function ChooseTravel() {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addTravel(dataTravel))
-        navigate(`/envios`)
+        navigate(`/firstForm`)
     }
 
 
@@ -68,8 +68,9 @@ function ChooseTravel() {
                             <h4>Por favor, ingresa nuevamente en otro momento</h4>
                         </Col>
                     </Row>
-                    <Buttons back="/" />
-                </Container>)}
+                    <Buttons back="/" children="Atrás"/>
+                </Container>)
+            }
         </>
     }
 
@@ -106,10 +107,12 @@ function ChooseTravel() {
                             </Row>
                         </Container>
                         <Buttons
-                            back="/" />
+                            back="/" children="Atrás"/>
                     </Form>
-                </>)}
-        </>)
+                </>)
+            }
+        </>
+    )
 }
 
 

@@ -1,0 +1,13 @@
+.wrapper_text{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.wrapper_info .button_next{
+    display: none !important;
+}
+
+.wrapper_info .button_back{
+    margin-right: 6rem;
+}

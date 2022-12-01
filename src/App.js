@@ -10,6 +10,7 @@ import Cuenta from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
 import CheckPack from './components/Pages/Envios/CheckPack/CheckPack';
 import { Auth } from './components/Pages/Auth/Auth';
+import OrderOk from './components/Pages/Envios/OrderOk/OrderOk';
 
 
 
@@ -19,13 +20,14 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/envios" element={<FirstForm />} />
+      <Route path="/firstForm" element={<FirstForm />} />
       <Route path="/chooseTravel" element={<ChooseTravel />} />
       <Route path="/ofertTravel" element={<OfertTravel />} />
       <Route path="/checkPack" element={<CheckPack />} />
       <Route path="/seguimiento" element={<Seguimiento />} />
       <Route path="/cuenta" element={<Cuenta /> } />
       <Route path="/auth" element={<Auth/>}/>
+      <Route path="/orderOk" element={<OrderOk />}/>
     </Routes>
     <Footer/>
   </>);
