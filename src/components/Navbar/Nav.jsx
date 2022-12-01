@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from "../../assets/logos/logo mediano.png"
+import logo from "../../assets/logos/logo travelpack.png";
 import "./Nav.css"
 
 export const Nav = () => {
