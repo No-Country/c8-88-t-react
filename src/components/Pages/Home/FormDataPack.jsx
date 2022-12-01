@@ -15,16 +15,16 @@ export const FormDataPack = () => {
     });
 
     const inputForm = (e) => {
-        setData({
-            ...data,
+        setData(currentValue => ({
+            ...currentValue,
             [e.target.name]: e.target.value,
-        })
+        }))
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addHome(data));
-        navigate(`/Envios`);
+        navigate(`/chooseTravel`);
     };
 
     return (<>

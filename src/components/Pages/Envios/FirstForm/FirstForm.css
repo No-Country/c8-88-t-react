@@ -3,7 +3,7 @@
     margin-top: 1rem;
 }
 
-.wrapper_title h4{
+.wrapper_title h4 {
     margin-bottom: 2rem;
 }
 
@@ -18,11 +18,18 @@
     margin-bottom: 1.2rem;
 }
 
+
 .wrapper_envios_form .row_control .form-control {
     border-radius: 12px;
-    max-width: 7rem;
+    margin-top: 1rem;
 }
 
 .wrapper_envios_form .form-check {
     margin-right: 3.1rem;
+}
+
+.wrapper_envios_form .row_control .form-label {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
 }

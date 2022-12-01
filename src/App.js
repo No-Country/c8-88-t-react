@@ -3,12 +3,12 @@ import { Routes, Route } from 'react-router';
 import { Nav } from './components/Navbar/Nav';
 import Login from './components/Login';
 import Seguimiento from './components/Pages/Seguimientos/Seguimiento';
-import ChooseTravel from './components/Pages/Envios/ChooseTravel';
-import OfertTravel from './components/Pages/Envios/OfertTravel';
-import Envios from './components/Pages/Envios/Envios';
+import ChooseTravel from './components/Pages/Envios/CardTravel/ChooseTravel';
+import OfertTravel from './components/Pages/Envios/OfertTravel/OfertTravel';
+import FirstForm from './components/Pages/Envios/FirstForm/FirstForm';
 import Cuenta from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
-import CheckPack from './components/Pages/Envios/CheckPack';
+import CheckPack from './components/Pages/Envios/CheckPack/CheckPack';
 import { Auth } from './components/Pages/Auth/Auth';
 
 
@@ -19,10 +19,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/envios" element={<Envios />} />
-      <Route path="/chooseTravel" element={<ChooseTravel />}></Route>
-      <Route path="/ofertTravel" element={<OfertTravel />}></Route>
-      <Route path="/checkPack" element={<CheckPack />}></Route>
+      <Route path="/envios" element={<FirstForm />} />
+      <Route path="/chooseTravel" element={<ChooseTravel />} />
+      <Route path="/ofertTravel" element={<OfertTravel />} />
+      <Route path="/checkPack" element={<CheckPack />} />
       <Route path="/seguimiento" element={<Seguimiento />} />
       <Route path="/cuenta" element={<Cuenta /> } />
       <Route path="/auth" element={<Auth/>}/>

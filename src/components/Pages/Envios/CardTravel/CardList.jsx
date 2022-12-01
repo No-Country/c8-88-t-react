@@ -1,7 +1,7 @@
 import React from 'react'
 import CardTravel from './CardTravel'
 
-function CardList({ data, travelId }) {
+function CardList({ data, travelId, checked }) {
 
     return (
         <>
@@ -14,6 +14,8 @@ function CardList({ data, travelId }) {
                     valoracion={item.Valoracion}
                     id={item.id}
                     chooseTravel={travelId}
+                    edad={item.edad}
+                    checked={checked}
                 />
             })}
         </>

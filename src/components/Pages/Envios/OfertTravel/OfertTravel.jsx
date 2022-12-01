@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Container, FormLabel, Row, Col, FormCheck, FormControl, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import ButtonNext from './Buttons/ButtonNext';
+import Buttons from '../Buttons/Buttons';
 import { useDispatch } from 'react-redux'
-import { addOfert } from '../../../reducers/users'
+import { addOfert } from '../../../../reducers/users'
 
 
 function OfertTravel() {
 
+    const [checked, setChecked] = useState(false)
     const [data, setData] = useState({
         oferta: "",
         seguro: "",
@@ -17,11 +18,19 @@ function OfertTravel() {
     const dispatch = useDispatch();
 
     const inputForm = (e) => {
-        setData({
-            ...data,
+        setData(currentValue => ({
+            ...currentValue,
             [e.target.name]: e.target.value,
-        })
+        }))
     };
+
+    const insurance = () => {
+        setChecked(!checked)
+        setData(currentValue => ({
+            ...currentValue,
+            seguro: !checked,
+        }))
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -49,6 +58,7 @@ function OfertTravel() {
                         <FormLabel column lg="auto">Oferta ofrecida:</FormLabel>
                         <Col xs={2}>
                             <FormControl
+                                required
                                 type="number"
                                 name="oferta"
                                 value={data.oferta}
@@ -61,8 +71,8 @@ function OfertTravel() {
                         <FormCheck
                             label="¿Necesitas seguro?"
                             name="seguro"
-                            onChange={inputForm}
-                            value="true"
+                            checked={checked}
+                            onChange={() => insurance()}
                             reverse
                         />
                     </Row>
@@ -74,12 +84,12 @@ function OfertTravel() {
                                 name="comentarios"
                                 value={data.comentarios}
                                 onChange={inputForm}
-                                style={{ width: '26rem', height:'6rem' }}
+                                style={{ width: '26rem', height: '6rem' }}
                             />
                         </Col>
                     </Row>
                 </Container>
-                <ButtonNext />
+                <Buttons back="/chooseTravel" />
             </Form>
         </>
     )

@@ -1,18 +1,22 @@
-.labelTravel {
-    width: max-content;
-    height: max-content;
+.form-label .form-check-input {
+    opacity: 0;
 }
 
-.labelTravel .checkbox {
-    opacity: 1;
+
+.wrapper_choose_travel .card_travel {
+    width: 330px;
+    max-width: 100%;
+    height: 125px;
+    box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
 }
 
-.cardTravel {
-    width: 15rem;
-    height: 12rem;
+.card_travel .card-img {
+    height: 125px;
 }
 
-.imgTravel {
-    width: 15rem;
-    height: 5rem;
+.select{
+    box-shadow: -2px 4px 4px #C1A1E7;
 }

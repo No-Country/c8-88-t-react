@@ -1,0 +1,8 @@
+.wrapper_no_travel .button_next{
+    display: none !important;
+}
+
+.wrapper_choose_travel{
+    max-width: 50rem;
+    margin-top: 1rem;
+}
