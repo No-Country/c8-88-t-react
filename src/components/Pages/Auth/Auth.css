@@ -8,7 +8,8 @@
 .wrapper_auth{
     width: 100%;
     max-width: 1366px;
-    min-height: 100vh;
+    min-height: calc(100vh - 216px);
+    gap: .75rem;
 }
 .wrapper_auth p,
 .wrapper_auth span{
@@ -19,10 +20,14 @@
     width: 50%;
     max-width: 472px;
 }
+.wrapper_auth > div{
+    width: 50%;
+}
 .wrapper_auth .wrapper_btn{
     width: 50%;
     max-width: 472px;
     min-height: 250px;
+    background-color: aquamarine;
 }
 .btn-login{
     height: 40px;
@@ -34,4 +39,28 @@
 }
 .btn-login:hover{
     background-color: var(--color-hover);
+}
+.bi-facebook{
+    font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+    .wrapper_auth > div{
+        width: 100%;
+        gap: .5rem;
+    }
+    .wrapper_auth img{
+        width: clamp(280px, 40%, 420px);
+    }
+    .wrapper_auth .wrapper_btn{
+        width: 80%;
+    }
+}
+@media (min-width: 993px) and (max-width: 1023px){
+    .wrapper_auth img{
+        width: clamp(280px, 70%, 472px);
+    }
+    .wrapper_auth .wrapper_btn{
+        width: 80%;
+    }
 }
