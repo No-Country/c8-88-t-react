@@ -1,6 +1,6 @@
 import React from 'react'
 import { app } from '../../../db'
-import { getAuth, signOut } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 import { useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { unsetUser } from '../../../reducers/users'

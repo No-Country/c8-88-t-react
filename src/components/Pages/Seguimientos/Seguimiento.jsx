@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import firestore from "../../../db/index";
-import img from "../../../assets/destinos/madrid.png";
 import { useNavigate } from "react-router-dom";
-import fondo from "../../../utils/seguimiento2.jpg";
 import paquete from "../../../utils/paquete.png";
 import tiempo from "../../../utils/tiempo.png";
 import viajero from "../../../utils/viajero.png"
@@ -13,13 +11,13 @@ import flecha from "../../../utils/flecha2.png"
 const Seguimiento = () => {
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
-  const orderCollections = collection(firestore, "orders");
-  const getOrder = async () => {
-    const data = await getDocs(orderCollections);
-    setOrder(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
 
   useEffect(() => {
+    const orderCollections = collection(firestore, "orders");
+    const getOrder = async () => {
+      const data = await getDocs(orderCollections);
+      setOrder(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
     getOrder();
   }, []);
 
@@ -28,11 +26,11 @@ const Seguimiento = () => {
   };
   return (
     <>
-    <div className="text-center">
-    <h1>Mis Envios</h1>
-    <h2>Detalles del paquete</h2>
+      <div className="text-center">
+        <h1>Mis Envios</h1>
+        <h2>Detalles del paquete</h2>
 
-    </div>
+      </div>
       {order.map((orders) => (
         <div class="card-group">
           <div class="card">
@@ -83,12 +81,12 @@ const Seguimiento = () => {
             </div>
           </div>
           <div class="card">
-            <div class="card-body"  style={{
-                backgroundImage: `url(${viajero})`,
-                backgroundSize: "15%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "bottom 20px right 10px",
-              }}>
+            <div class="card-body" style={{
+              backgroundImage: `url(${viajero})`,
+              backgroundSize: "15%",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "bottom 20px right 10px",
+            }}>
               <h5 class="card-title text-center">Viajero Elegido</h5>
               <p class="card-text"></p>
               <p class="card-text">
@@ -101,7 +99,7 @@ const Seguimiento = () => {
       ))}
 
       <div className="d-flex flex-row-reverse p-2">
-        <button className="btn btn-primary btn-sm"  onClick={handleClick}>Atras</button>
+        <button className="btn btn-primary btn-sm" onClick={handleClick}>Atras</button>
       </div>
     </>
   );

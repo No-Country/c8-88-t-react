@@ -35,7 +35,7 @@ export const singGoogle = async () => {
 
   try {
     const credentials = await signInWithPopup(auth, provider)
-    alert("bienvendio" + " " + credentials.user.displayName)
+    alert("bienvendio" + credentials.user.displayName)
   } catch (error) {
     console.log(error.message)
   }
@@ -47,7 +47,7 @@ export const singFacebook = async () => {
 
   try {
     const credentials = await signInWithPopup(auth, providerF)
-    alert("bienvendio" + " " + credentials.user.email)
+    alert("bienvendio" + credentials.user.email)
   } catch (error) {
     console.log(error.message)
   }
