@@ -1,10 +1,10 @@
-
 import { Route, useLocation, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../reducers/users/index";
-function ProtectedRoute({ children }) {
+function PrivateRoute({ children }) {
   const isAuthenticated = useSelector(selectUser);
-  return !isAuthenticated ? children : <Navigate to="/" />;
+
+  return isAuthenticated ? children : <Navigate to="/login" />;
 }
 
-export default ProtectedRoute;
+export default PrivateRoute;

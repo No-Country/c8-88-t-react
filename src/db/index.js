@@ -2,7 +2,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore, collection, getDocs, addDoc, query, where } from "firebase/firestore"
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import {
+  GoogleAuthProvider, 
+  signInWithPopup,
+  createUserWithEmailAndPassword } from 'firebase/auth'
 import { FacebookAuthProvider } from 'firebase/auth'
 
 
@@ -21,7 +24,10 @@ export const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 export const auth = getAuth(app)
 
-
+//registro email
+export const regisEmail = (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password);
+}
 
 // registro google
 export const singGoogle = async () => {
@@ -64,13 +70,6 @@ export async function getTravellerss(destino, origen) {
   });
   return dataDocs;
 }
-
-// export async function orderDetail(id) {
-//   const docRef = doc(firestore, "orders", id)
-//   const docSnapshot = await getDocs(docRef);
-//   return console.log({ ...docSnapshot.data(), id: docSnapshot.id })
-// }
-
 
 
 export default firestore;

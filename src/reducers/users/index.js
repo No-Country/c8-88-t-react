@@ -3,7 +3,9 @@ import { combineReducers, createSlice } from '@reduxjs/toolkit'
 const initialState = {
     email: "",
     fullName: "",
-    password: ""
+    password: "",
+    isAuthenticated: false,
+    user: null
 
 }
 
@@ -31,11 +33,15 @@ export const userSlice = createSlice({
             state.email = action.payload.email;
             state.fullName = action.payload.fullName;
             state.password = action.payload.password;
+            state.isAuthenticated = true
+            state.user = state.user
         },
         unsetUser: (state) => {
             state.email = ""
             state.fullName = ""
             state.password = ""
+            state.user = null;
+            state.isAuthenticated = false
         }
     }
 })
@@ -68,6 +74,7 @@ const orderSlice = createSlice({
     }
 });
 
+export const selectUser = (state) => state.user.isAuthenticated
 export const { addUser, unsetUser } = userSlice.actions;
 export const { addHome, addEnvios, addTravel, addOfert } = orderSlice.actions;
 

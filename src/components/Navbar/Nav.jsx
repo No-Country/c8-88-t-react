@@ -30,6 +30,7 @@ export const Nav = () => {
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
                     <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
+                    <Link className="nav-link" to={"/login"} >Login</Link>
                 </div>
                 <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5">
                     <p className="mb-0 mx-auto">Bienvenido Usuario</p>

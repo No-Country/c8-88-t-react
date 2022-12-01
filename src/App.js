@@ -10,6 +10,9 @@ import Cuenta from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
 import CheckPack from './components/Pages/Envios/CheckPack';
 import { Auth } from './components/Pages/Auth/Auth';
+import ProtectedRoute from './Routes/ProtectedRoute';
+import PrivateRoute from './Routes/PrivateRoutes';
+import MiPaquete from './components/Pages/Seguimientos/MiPaquete';
 
 
 
@@ -18,13 +21,14 @@ function App() {
     <Nav />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/envios" element={<Envios />} />
-      <Route path="/chooseTravel" element={<ChooseTravel />}></Route>
-      <Route path="/ofertTravel" element={<OfertTravel />}></Route>
-      <Route path="/checkPack" element={<CheckPack />}></Route>
-      <Route path="/seguimiento" element={<Seguimiento />} />
-      <Route path="/cuenta" element={<Cuenta /> } />
+      <Route path="/login" element={<ProtectedRoute><Login /></ProtectedRoute> } />
+      <Route path="/envios" element={<PrivateRoute><Envios /></PrivateRoute>} />
+      <Route path="/chooseTravel" element={<PrivateRoute><ChooseTravel /></PrivateRoute>}></Route>
+      <Route path="/ofertTravel" element={<PrivateRoute><OfertTravel /></PrivateRoute>}></Route>
+      <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
+      <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
+      <Route path="/mipaquete" element={<MiPaquete />} />
+      <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute> } />
       <Route path="/auth" element={<Auth/>}/>
     </Routes>
     <Footer/>

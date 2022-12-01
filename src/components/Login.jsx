@@ -1,90 +1,122 @@
 import React from 'react'
 import { useState} from 'react'
-import { app } from '../db/index';
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
-} from 'firebase/auth'
-import { getFirestore, doc, collection, setDoc } from 'firebase/firestore';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {  useNavigate, Link } from 'react-router-dom';
+import { addUser } from '../reducers/users';
+import { regisEmail } from '../db';
 
-const auth = getAuth(app)
+
+
+
+
+
 
 
 function Login() {
-  const navigate = useNavigate()
-  const firestore = getFirestore(app);
-  const [isRegistrando, setIsRegistrando] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({
+    email: "",
+    password: ""
+  });
 
-  async function registrarUsuario(email, password, rol) {
-    const infoUsuario = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    ).then((usuarioFirebase) => {
-      return usuarioFirebase;
-    });
-
-    console.log(infoUsuario.user.uid);
-    const docuRef = doc(firestore, `usuarios/${infoUsuario.user.uid}`);
-    setDoc(docuRef, { correo: email, rol: rol });
-  }
-
-  function submitHandler(e) {
+  const inputHandle = (e) => {
+    setUser(() => ({
+      ...user,
+      [e.target.name]: e.target.value
+    }));
+  };
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
-    const rol = e.target.elements.rol.value;
-
-    console.log("submit", email, password, rol);
-
-    if (isRegistrando) {
-      // registrar
-      registrarUsuario(email, password, rol);
-      navigate('/')
-    } else {
-      // login
-      signInWithEmailAndPassword(auth, email, password);
-      navigate('/')
-    }
-  }
+    dispatch(addUser(user));
+    regisEmail(user.email, user.password)
+    navigate("/cuenta");
+  };
 
   return (
-    <div>
-      <h1>{isRegistrando ? "Regístrate" : "Inicia sesión"}</h1>
+    <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <img
+            className="mx-auto h-12 w-auto"
+            src=""
+            alt="Workflow"
+          />
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Sign in to your account
+          </h2>
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <input type="hidden" name="remember" value="true" />
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div className="mb-2">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email-address"
+                name="email"
+                type="email"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Email address"
+                onChange={inputHandle}
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Password"
+                onChange={inputHandle}
+              />
+            </div>
+          </div>
 
-      <form onSubmit={submitHandler}>
-        <label>
-          Correo electrónico:
-          <input type="email" id="email" />
-        </label>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+              />
+              <label
+                htmlFor="remember-me"
+                className="ml-2 block text-sm text-gray-900"
+              >
+                Remember me
+              </label>
+            </div>
 
-        <label>
-          Contraseña:
-          <input type="password" id="password" />
-        </label>
+            <div className="text-sm">
+              <Link
+                to="/forgetpassword"
+                className="font-medium text-indigo-600 hover:text-indigo-500"
+              >
+                Forgot your password?
+              </Link>
+            </div>
+          </div>
 
-        <label>
-          Rol:
-          <select id="rol">
-            <option value="viajero">Viajero</option>
-            <option value="user">Usuario</option>
-          </select>
-        </label>
-
-        <input
-          type="submit"
-          value={isRegistrando ? "Registrar" : "Iniciar sesión"}
-        />
-      </form>
-
-      <button onClick={() => setIsRegistrando(!isRegistrando)}>
-        {isRegistrando ? "Ya tengo una cuenta" : "Quiero registrarme"}
-      </button>
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default Login;
