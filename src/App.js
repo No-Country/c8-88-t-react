@@ -29,13 +29,7 @@ function App() {
       <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
       <Route path="/mipaquete" element={<MiPaquete />} />
       <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute> } />
-      <Route path="/login" element={<Login />} />
       <Route path="/firstForm" element={<FirstForm />} />
-      <Route path="/chooseTravel" element={<ChooseTravel />} />
-      <Route path="/ofertTravel" element={<OfertTravel />} />
-      <Route path="/checkPack" element={<CheckPack />} />
-      <Route path="/seguimiento" element={<Seguimiento />} />
-      <Route path="/cuenta" element={<Cuenta /> } />
       <Route path="/auth" element={<Auth/>}/>
       <Route path="/orderOk" element={<OrderOk />}/>
     </Routes>
