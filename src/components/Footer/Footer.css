@@ -49,20 +49,17 @@
     }
     .wrapper_autores > div{
         width: 70%;
-        background-color: red;
     }
     .wrapper_autores > div p{
         width: 100%;
     }
     .wrapper_autores .autores{
         width: 100%;
-
     }
 }
 
 @media  (max-width: 425px){
     .wrapper_autores > div{
         width: 100%;
-        background-color: red;
     }
 }

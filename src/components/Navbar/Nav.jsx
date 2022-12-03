@@ -24,22 +24,23 @@ export const Nav = () => {
                         <span className="hamburger-inner"></span>
                     </span>
             </button>
+
             <div className="collapse navbar-collapse wrapper_enlaces" id="navbarNavAltMarkup">
                 <div className="navbar-nav d-lg-flex justify-content-lg-evenly fw-500">
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
-                    <ul className="nav-item dropdown">
-                        <ul className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul className="nav-item dropdown p-0">
+                        <p className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cuenta
-                            <li className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
-                            </li>
-                        </ul>
+                        </p>
+                        <li className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                            <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
+                        </li>
                     </ul>
-                    
                 </div>
-                <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5">
+
+                <div className="usuario_navbar w-100 w-md-25 text-start text-lg-end pe-md-5">
                 <Link className="nav-link" to={"/auth"} >Iniciar sesión</Link>
                 </div>
             </div>
