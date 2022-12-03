@@ -6,7 +6,7 @@ import Seguimiento from './components/Pages/Seguimientos/Seguimiento';
 import ChooseTravel from './components/Pages/Envios/CardTravel/ChooseTravel';
 import OfertTravel from './components/Pages/Envios/OfertTravel/OfertTravel';
 import FirstForm from './components/Pages/Envios/FirstForm/FirstForm';
-import Cuenta from './components/Pages/Cuenta/Cuenta';
+import { MiPerfil } from './components/Pages/MiPerfil/MiPerfil';
 import { Footer } from './components/Footer/Footer';
 import CheckPack from './components/Pages/Envios/CheckPack/CheckPack';
 import { Auth } from './components/Pages/Auth/Auth';
@@ -29,7 +29,7 @@ function App() {
         <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
         <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
         <Route path="/mipaquete" element={<MiPaquete />} />
-        <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute> } />
+        <Route path="/perfil" element={<PrivateRoute><MiPerfil /></PrivateRoute> } />
         <Route path="/firstForm" element={<FirstForm />} />
         <Route path="/auth" element={<Auth/>}/>
         <Route path="/orderOk" element={<OrderOk />}/>
@@ -39,6 +39,7 @@ function App() {
     <Footer/>
   </>);
 }
+
 
 
 export default App;

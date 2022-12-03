@@ -29,7 +29,15 @@ export const Nav = () => {
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
-                    <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
+                    <ul className="nav-item dropdown">
+                        <ul className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cuenta
+                            <li className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
+                            </li>
+                        </ul>
+                    </ul>
+                    
                 </div>
                 <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5">
                 <Link className="nav-link" to={"/auth"} >Iniciar sesión</Link>
