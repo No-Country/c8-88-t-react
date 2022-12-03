@@ -37,18 +37,18 @@
 .navbar-toggler:focus{
     box-shadow: 0 0 0 var(--color-secondary);
 }
-.dropdown-menu{
+.navbar .dropdown-menu{
     background-color: var(--color-primary);
     transition: all .3s ease-in-out;
 }
-.dropdown-item{
+.navbar .dropdown-item{
     color: var(--color-white);
     background-color: var(--color-primary);
 }
-.dropdown-item:hover{
+.navbar .dropdown-item:hover{
     color: var(--color-btn);
     background-color: var(--color-hover);
 }
-.dropdown-menu[data-bs-popper]{
+.navbar .dropdown-menu[data-bs-popper]{
     margin-top: 0;
 }

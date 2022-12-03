@@ -45,7 +45,15 @@ export const Footer = () => {
                             <li> <Link to="/">Home</Link> </li>
                             <li> <Link to="/envios">Envíos</Link> </li>
                             <li> <Link to="/seguimiento">Seguimiento</Link> </li>
-                            <li> <Link to="/cuenta">Cuenta</Link> </li>
+                            {/* <li> <Link to="/cuenta">Cuenta</Link> </li> */}
+                            <ul className="nav-item dropdown p-0">
+                                <p className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Cuenta
+                                </p>
+                                <li className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                                    <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
+                                </li>
+                            </ul>
                         </ul>
                 </div>
 
