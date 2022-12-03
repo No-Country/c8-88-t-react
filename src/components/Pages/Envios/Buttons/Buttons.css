@@ -4,25 +4,25 @@
 
 .button_next {
     max-width: 177px;
-    background: #747A80;
+    background: var(--color-btn);
     border-radius: 12px;
     margin-left: 1.5rem;
 }
 
 .button_back {
     max-width: 177px;
-    background: #FFFFFF;
+    background: var(--color-white);
     border-radius: 12px;
-    border: 1px solid #061930;
-    color: #061930;
+    border: 1px solid var(--color-btn);
+    color: var(--color-btn);
 }
 
 .button_next:hover {
-    background: #747A80;
+    background: var(--color-btn);
 }
 
 .button_back:hover {
-    background: #FFFFFF;
-    border: 1px solid #061930;
-    color: #061930;
+    background: var(--color-white);
+    border: 1px solid var(--color-btn);
+    color: var(--color-btn);
 }

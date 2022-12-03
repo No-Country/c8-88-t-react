@@ -64,6 +64,7 @@ function OfertTravel() {
                                 value={data.oferta}
                                 onChange={inputForm}
                                 placeholder="USD"
+                                min="1"
                             />
                         </Col>
                     </Row>
@@ -89,7 +90,7 @@ function OfertTravel() {
                         </Col>
                     </Row>
                 </Container>
-                <Buttons back="/chooseTravel" children="Atrás"/>
+                <Buttons back="/firstForm" children="Atrás"/>
             </Form>
         </>
     )

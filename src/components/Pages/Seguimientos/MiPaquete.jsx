@@ -1,66 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { getDocs, collection } from "firebase/firestore";
-import firestore from "../../../db/index";
-import img from "../../../assets/destinos/miami.png";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { packDetail } from '../../../db/index'
+import pack from '../../../assets/envios/pack.png'
+import recorrido from '../../../assets/envios/recorrido.png'
+import "./MiPaquete.css"
+
 
 const MiPaquete = () => {
-  const navigate = useNavigate()
-  const [order, setOrder] = useState([]);
 
+  const [data, setData] = useState({})
+  const { id } = useParams()
 
   useEffect(() => {
-    const orderCollections = collection(firestore, "orders");
-    const getOrder = async () => {
-      const data = await getDocs(orderCollections);
-      setOrder(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getOrder();
-  }, []);
+    packDetail(id)
+      .then(response => setData(response))
+  }, [id])
 
-  const handleClick = () => {
-    navigate('/seguimiento')
-  }
 
   return (
-    <>
-      <div className="text-center">
-        <h1>Mis envios</h1>
-        <h2>Selecciona el envio que quieres rastrear</h2>
-
-      </div>
-      <div className="d-flex justify-content-center" >
-        <div className="card mb-3" style={{ width: '480px' }}>
-          <div className="row g-0">
-            <div className="col-sm-4" onClick={handleClick} style={{ cursor: 'pointer' }}>
-              <img
-                src={img}
-                className="img-fluid rounded-start"
-                alt="..."
-              />
-            </div>
-            <div className="col-md-8">
-
-              {order.map((orders) => (
-                < >
-
-                  <div className="card-body" >
-                    <h5 className="card-title">origen: {orders.origen}</h5>
-                    <p className="card-text">destino: {orders.destino}</p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        traveller: {orders.travel}
-                      </small>
-                    </p>
-                  </div>
-                </>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </>
+    <Container>
+      <Row className="wrapper_pack_detail">
+        <Col md={4} className="first_column">
+          <h5>De {data.origen} a {data.destino}</h5>
+          <Row>
+            <Col xs={1}>
+              <img src={recorrido} alt="recorrido" />
+            </Col>
+            <Col xs="auto">
+              <p>En espera</p>
+              <p>En camino</p>
+            </Col>
+          </Row>
+        </Col>
+        <Col md={4} className="b">
+          <h5>Paquete <img src={pack} alt="caja" /></h5>
+          <p>Medidas: {data.alto}cm x {data.largo}cm x {data.ancho}cm </p>
+          <p>Peso: {data.peso} </p>
+        </Col>
+        <Col md={4} className="third_clumn">
+          <h5>Viajero elegido</h5>
+          <p> <img src={data.img} alt="foto viajero" /></p>
+          <p>{data.travel}</p>
+          <p>+{data.cel}</p>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

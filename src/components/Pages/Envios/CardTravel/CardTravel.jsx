@@ -2,24 +2,24 @@ import React from 'react'
 import { Card, Col, FormLabel, FormCheck, Row } from 'react-bootstrap'
 import "./CardTravel.css"
 
-function CardTravel({ img, nombre, apellido, chooseTravel, edad, checked }) {
-
+function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id}) {
 
     return (
         <Col>
-            <FormLabel>
+            <FormLabel htmlFor={id}>
                 <FormCheck
                     required
+                    id={id}
                     type="radio"
                     name="travel"
-                    onChange={() => { chooseTravel(nombre, apellido) }}
+                    onChange={() => { chooseTravel(nombre, apellido, cel, img) }}
                 />
-                <Card className={`${checked ? "select" : "card_travel"}`}>
+                <Card className="card_travel">
                     <Row className="g-0 justify-content-center">
-                        <Col sm={5}>
+                        <Col xs={5}>
                             <Card.Img src={img} />
                         </Col>
-                        <Col sm={7}>
+                        <Col xs={7}>
                             <Card.Body>
                                 <Card.Title>{nombre} {apellido}</Card.Title>
                                 <Card.Text>Edad: {edad}</Card.Text>

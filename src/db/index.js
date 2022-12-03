@@ -1,11 +1,12 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs, addDoc, query, where } from "firebase/firestore"
+import { getFirestore, collection, getDocs, doc, addDoc, query, where, getDoc } from "firebase/firestore"
 import {
-  GoogleAuthProvider, 
+  GoogleAuthProvider,
   signInWithPopup,
-  createUserWithEmailAndPassword } from 'firebase/auth'
+  createUserWithEmailAndPassword
+} from 'firebase/auth'
 import { FacebookAuthProvider } from 'firebase/auth'
 
 
@@ -32,7 +33,6 @@ export const regisEmail = (email, password) => {
 // registro google
 export const singGoogle = async () => {
   const provider = new GoogleAuthProvider()
-
   try {
     const credentials = await signInWithPopup(auth, provider)
     alert("bienvendio" + credentials.user.displayName)
@@ -53,14 +53,13 @@ export const singFacebook = async () => {
   }
 }
 
-
 export async function orderTravellers(orderTravel) {
   const collectionRef = collection(firestore, "orders");
   let rta = await addDoc(collectionRef, orderTravel)
   return rta.id;
 };
 
-export async function getTravellerss(destino, origen) {
+export async function getTravellers(destino, origen) {
   const miCollection = collection(firestore, "Travellers");
   const destiny = query(miCollection, where("destino", "==", destino));
   const source = query(miCollection, where("origen", "==", origen));
@@ -69,6 +68,12 @@ export async function getTravellerss(destino, origen) {
     return { ...documento.data(), id: documento.id }
   });
   return dataDocs;
+}
+
+export async function packDetail(id) {
+  const docRef = doc(firestore, "orders", id)
+  const docSnapshot = await getDoc(docRef)
+  return { ...docSnapshot.data(), id: docSnapshot.id }
 }
 
 

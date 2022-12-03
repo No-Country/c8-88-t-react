@@ -14,27 +14,30 @@ import ProtectedRoute from './Routes/ProtectedRoute';
 import PrivateRoute from './Routes/PrivateRoutes';
 import MiPaquete from './components/Pages/Seguimientos/MiPaquete';
 import OrderOk from './components/Pages/Envios/OrderOk/OrderOk';
+import Envios from './components/Pages/Envios/Envios';
 
 
 
 function App() {
-  return (<>
-    <Nav />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<ProtectedRoute><Login /></ProtectedRoute> } />
-      <Route path="/chooseTravel" element={<PrivateRoute><ChooseTravel /></PrivateRoute>}></Route>
-      <Route path="/ofertTravel" element={<PrivateRoute><OfertTravel /></PrivateRoute>}></Route>
-      <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
-      <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
-      <Route path="/mipaquete" element={<MiPaquete />} />
-      <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute> } />
-      <Route path="/firstForm" element={<FirstForm />} />
-      <Route path="/auth" element={<Auth/>}/>
-      <Route path="/orderOk" element={<OrderOk />}/>
-    </Routes>
-    <Footer/>
-  </>);
+  return (
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<ProtectedRoute><Login /></ProtectedRoute>} />
+        <Route path="/envios" element={<Envios />} />
+        <Route path="/chooseTravel" element={<PrivateRoute><ChooseTravel /></PrivateRoute>}></Route>
+        <Route path="/ofertTravel" element={<PrivateRoute><OfertTravel /></PrivateRoute>}></Route>
+        <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
+        <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
+        <Route path="/mipaquete/:id" element={<MiPaquete />} />
+        <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute>} />
+        <Route path="/firstForm" element={<FirstForm />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/orderOk" element={<OrderOk />} />
+      </Routes>
+      <Footer />
+    </>);
 }
 
 

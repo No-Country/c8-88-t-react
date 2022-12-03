@@ -22,7 +22,9 @@ const initialStateOrder = {
     travel: "",
     oferta: "",
     seguro: "",
-    comentarios: ""
+    comentarios: "",
+    img:"",
+    cel:""
 }
 
 export const userSlice = createSlice({
@@ -65,6 +67,8 @@ const orderSlice = createSlice({
         },
         addTravel: (state, action) => {
             state.travel = action.payload.travel;
+            state.cel = action.payload.cel;
+            state.img = action.payload.img;
         },
         addOfert: (state, action) => {
             state.seguro = action.payload.seguro;

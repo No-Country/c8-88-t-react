@@ -40,6 +40,7 @@ export const FormDataPack = () => {
                     name="origen"
                     value={data.origen}
                     onChange={inputForm}
+                    required
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
@@ -53,6 +54,7 @@ export const FormDataPack = () => {
                     name="destino"
                     value={data.destino}
                     onChange={inputForm}
+                    required
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
@@ -66,6 +68,7 @@ export const FormDataPack = () => {
                     name="inicio"
                     value={data.inicio}
                     onChange={inputForm}
+                    required
                 />
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
@@ -79,6 +82,7 @@ export const FormDataPack = () => {
                     name="final"
                     value={data.final}
                     onChange={inputForm}
+                    required
                 />
             </div>
             <div className="w-100 d-flex justify-content-end align-items-center flex-nowrap">

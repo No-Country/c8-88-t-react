@@ -8,7 +8,7 @@
 }
 
 .wrapper_envios_form {
-    border: 1px solid #C1A1E7;
+    border: 1px solid var(--color-detail);
     border-radius: 1.12rem;
     max-width: 50rem;
     margin-top: 1rem;

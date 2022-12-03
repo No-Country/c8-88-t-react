@@ -37,21 +37,21 @@ export const Auth = () => {
                         <button 
                             className="btn-login w-100 d-flex gap-4 justify-content-start align-items-center ps-5" 
                             onClick={handleFacebook}>
-                            <i class="bi bi-facebook"></i>
+                            <i className="bi bi-facebook"></i>
                             Ingresar con Facebook
                         </button>
 
                         <button 
                             className="btn-login w-100 d-flex gap-4 justify-content-start align-items-center ps-5" 
                             onClick={handleGoogle}>
-                            <i class="bi bi-google"></i>
+                            <i className="bi bi-google"></i>
                             Ingresar con Google
                         </button>
 
                         <button 
                             className="btn-login w-100 d-flex gap-4 justify-content-start align-items-center ps-5" 
                             onClick={handleEmail}>
-                            <i class="bi bi-envelope"></i>
+                            <i className="bi bi-envelope"></i>
                             Ingresar con Email
                         </button>
 

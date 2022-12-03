@@ -1,0 +1,11 @@
+.wrapper_envios_card .card {
+    max-width: 22.4rem;
+    max-height: 23.2rem;
+    margin-top: 5rem;
+    box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.wrapper_envios_card .btn {
+    margin-top: 1rem;
+}

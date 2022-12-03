@@ -1,106 +1,76 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import firestore from "../../../db/index";
-import { useNavigate } from "react-router-dom";
-import paquete from "../../../utils/paquete.png";
-import tiempo from "../../../utils/tiempo.png";
-import viajero from "../../../utils/viajero.png"
-import aste from "../../../utils/aste.png"
-import flecha from "../../../utils/flecha2.png"
+import { Link } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
+import Rectangle from '../../../assets/loader/Rectangle.gif'
+import './Seguimiento.css'
+import CardPack from "./CardPack";
+import londres from '../../../assets/destinos/londres.png'
+import nopack from '../../../assets/envios/nopack.png'
+
 
 const Seguimiento = () => {
-  const navigate = useNavigate();
   const [order, setOrder] = useState([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     const orderCollections = collection(firestore, "orders");
     const getOrder = async () => {
       const data = await getDocs(orderCollections);
       setOrder(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setLoading(false)
     };
     getOrder();
   }, []);
 
-  const handleClick = () => {
-    navigate("/mipaquete");
-  };
+
+  if (order.length === 0) {
+    return <>
+      {loading ?
+        (<Container fluid>
+          <Row md="auto" className="justify-content-center">
+            <Col>
+              <img alt="loader" src={Rectangle} />
+            </Col>
+          </Row>
+        </Container>) :
+        (<Container fluid className="wrapper_no_envios">
+          <Row md="auto" className="justify-content-center">
+            <Col>
+              <img src={nopack} alt="sin paquete" />
+            </Col>
+          </Row>
+          <Row md="auto" className="justify-content-center">
+            <Col>
+              <h3>No tienes ningun envio realizado</h3>
+            </Col>
+          </Row>
+          <Row md="auto" className="justify-content-center">
+            <Col>
+              <Link className="link" to={"/"}><h5>Pulsa aqui para empezar uno</h5></Link>
+            </Col>
+          </Row>
+        </Container>)
+      }
+    </>
+  }
   return (
     <>
-      <div className="text-center">
-        <h1>Mis Envios</h1>
-        <h2>Detalles del paquete</h2>
-
-      </div>
-      {order.map((orders) => (
-        <div class="card-group">
-          <div class="card">
-            <div
-              class="card-body"
-              style={{
-                backgroundImage: `url(${tiempo})`,
-                backgroundSize: "15%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "bottom 20px right 10px",
-              }}
-            >
-              <h3 class="card-title text-center">
-                De {orders.origen} a {orders.destino}{" "}
-              </h3>
-              <p></p>
-              <h5 class="card-text"> <img src={aste} alt="" /> 29/11/22 07:15 - En espera</h5>
-              <p class="card-text"> <img src={flecha} alt="" />
-                {" "}
-                29/11/22 07:23 - el viajero acepto la oferta
-              </p>
-              <p></p>
-              <h5><img src={aste} alt="" />  02/12/2022 10:33 - En camino</h5>
-              <p class="card-text">
-                <small class="text-muted"><img src={flecha} alt="" />
-                  {" "}
-
-                  02/12/2022 10:50 - tu paquete esta en viaje
-                </small>
-              </p>
-            </div>
-          </div>
-          <div class="card ">
-            <div
-              class="card-body"
-              style={{
-                backgroundImage: `url(${paquete})`,
-                backgroundSize: "15%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "bottom 20px right 10px",
-              }}
-            >
-              <h5 class="card-title text-center">Paquete</h5>
-              <p class="card-text">Alto: {orders.alto}</p>
-              <p class="card-text">Ancho: {orders.ancho}</p>
-              <p class="card-text">Largo: {orders.largo}</p>
-              <p class="card-text">Peso: {orders.peso}</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body" style={{
-              backgroundImage: `url(${viajero})`,
-              backgroundSize: "15%",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "bottom 20px right 10px",
-            }}>
-              <h5 class="card-title text-center">Viajero Elegido</h5>
-              <p class="card-text"></p>
-              <p class="card-text">
-                <small class="text-muted">{orders.travel}</small>
-              </p>
-              <p>Tel: +541123456789</p>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      <div className="d-flex flex-row-reverse p-2">
-        <button className="btn btn-primary btn-sm" onClick={handleClick}>Atras</button>
-      </div>
+      <Container fluid className="wrapper_card_pack">
+        <Row md="auto" className="justify-content-center">
+          {order.map((item) => {
+            return <CardPack
+              key={item.id}
+              img={londres}
+              destino={item.destino}
+              travel={item.travel}
+              id={item.id}
+            />
+          })}
+        </Row>
+      </Container>
     </>
   );
 };
