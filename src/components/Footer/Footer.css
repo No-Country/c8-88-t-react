@@ -24,9 +24,45 @@
 .footer{
     max-width: 1366px;
 }
-.footer .footer_rrss{
-    width: clamp();
+.footer > div {
+    width: 50%;
 }
-.copyright{
+.wrapper_autores > div{
     width: 100%;
+}
+.wrapper_autores > div p{
+    width: 25%;
+}
+.wrapper_autores .autores{
+    width: 75%;
+    gap: 1.25rem;
+}
+
+
+
+@media  (max-width: 991px) {
+    .wrapper_footer{
+        min-height: auto;
+    }
+    .footer > div {
+        width: 100%;
+    }
+    .wrapper_autores > div{
+        width: 70%;
+        background-color: red;
+    }
+    .wrapper_autores > div p{
+        width: 100%;
+    }
+    .wrapper_autores .autores{
+        width: 100%;
+
+    }
+}
+
+@media  (max-width: 425px){
+    .wrapper_autores > div{
+        width: 100%;
+        background-color: red;
+    }
 }
