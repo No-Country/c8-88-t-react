@@ -1,0 +1,13 @@
+.wrapper_login{
+    width: clamp(320px, 80%, 1200px );
+    background-color: brown;
+    height: inherit;
+}
+.wrapper_login > div{
+    width: clamp(320px, 50%, 992px );
+    background-color: blue;
+}
+.login_header img{
+    width: 120px;
+    height: 120px;
+}

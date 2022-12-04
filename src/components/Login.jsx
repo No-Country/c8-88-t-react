@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import {  useNavigate, Link } from 'react-router-dom';
 import { addUser } from '../reducers/users';
 import { regisEmail } from '../db';
+import "./Login.css";
+import  Logo  from "../assets/logos/logo alterno.png";
 
 
 function Login() {
@@ -28,8 +30,25 @@ function Login() {
   };
 
   return (
-    <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="wrapper_login d-flex flex-column align-items-center justify-content-center mx-auto">
+      
+      <div className='login_header d-flex flex-column align-items-center justify-content-center'>
+        <img className="" src={Logo} alt="Logo TravelPack"/>
+        <h2 className="h4">Iniciar sesión</h2>
+      </div>
+
+      <div className='login_main'>
+        <form className="row g-4 w-100" onSubmit={handleSubmit}>
+        
+          <div className=" col-10  mx-auto ">
+
+          </div>
+        </form>
+      </div>
+
+
+
+      {/* <div className="max-w-md w-full space-y-8">
         <div>
           <img
             className="mx-auto h-12 w-auto"
@@ -37,7 +56,7 @@ function Login() {
             alt="Workflow"
           />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Iniciar sesión
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -108,7 +127,7 @@ function Login() {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };
