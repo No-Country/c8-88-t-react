@@ -1,13 +1,69 @@
+:root{
+    --color-primary: #371B58;
+    --color-secondary: #63BCAC;
+    --color-white: #ffffff;
+    --color-btn: #061930;
+    --color-hover: #c1a1e7;
+    --color-hover-input: #7439bd;
+}
 .wrapper_login{
     width: clamp(320px, 80%, 1200px );
-    background-color: brown;
     height: inherit;
 }
 .wrapper_login > div{
     width: clamp(320px, 50%, 992px );
-    background-color: blue;
+    
 }
 .login_header img{
     width: 120px;
     height: 120px;
+}
+.login_main .btn-primary{
+    background-color: var(--color-primary);
+    transition: all .3s ease-in-out;
+}
+.login_main .btn-primary:hover{
+    color: var(--color-primary);
+    background-color: var(--color-hover);
+}
+.login_main .form-label{
+    color: var(--color-primary);
+}
+.login_main input{
+    margin-top: 3px;
+    border-width: 2px;
+    border-color: var(--color-hover) ;
+    border-top: 2px solid var(--color-hover);
+    border-left: 2px solid var(--color-hover);
+    outline: none;
+}
+.login_main input:focus{
+    border-width: 2px;
+    border-color: var(--color-hover-input);
+}
+.login_main .btn-contraseña,
+.login_main .btn-contraseña:visited {
+    width: 190px;
+    border: none;
+    font-weight: 500;
+    color: var(--color-hover-input);
+    background-color: transparent;
+}
+.login_main .btn-contraseña:hover{
+    color: var(--color-btn);
+}
+
+@media (max-width: 991px) and (min-width:768px){
+    .wrapper_login > div{
+        width: 70%;
+    }
+}
+@media (max-width: 767px) {
+    .login_header img{
+        width: 90px;
+        height: 90px;
+    }
+    .wrapper_login > div{
+        width: 80%;
+    }
 }
