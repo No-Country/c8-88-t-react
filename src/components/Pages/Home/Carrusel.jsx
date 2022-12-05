@@ -1,8 +1,6 @@
 import image1 from "../../../assets/carrusel/image1.png";
 import image2 from "../../../assets/carrusel/image2.png";
 import image3 from "../../../assets/carrusel/image3.png";
-import image4 from "../../../assets/carrusel/image4.png";
-import image5 from "../../../assets/carrusel/image5.png";
 
 export const Carrusel = () => {
     return (<>
@@ -17,14 +15,7 @@ export const Carrusel = () => {
                 <div className="carousel-item">
                     <img src={image3} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
                 </div>
-                <div className="carousel-item">
-                    <img src={image4} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
-                </div>
-                <div className="carousel-item">
-                    <img src={image5} className="d-block w-100 h-100" alt="TravelPack tu mejor opción"/>
-                </div>
             </div>
-
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
