@@ -1,5 +1,5 @@
 
-import { Route, useLocation, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../reducers/users/index";
 function ProtectedRoute({ children }) {

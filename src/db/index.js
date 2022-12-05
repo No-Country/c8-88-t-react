@@ -35,6 +35,7 @@ export const regisEmail = async (email, fullName, password) => {
 }
 export const login = async (email, fullName, password) => {
   const data = await signInWithEmailAndPassword(auth, email, fullName, password)
+  console.log(data)
 } 
 
 // registro google
