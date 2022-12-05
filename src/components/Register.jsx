@@ -1,21 +1,20 @@
 import React from 'react'
-import { useState} from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {  useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { addUser } from '../reducers/users';
 import { regisEmail } from '../db';
 
-function Register () {
+function Register() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const state = useSelector((state)=> state.user)
+  const state = useSelector((state) => state.user)
   const [user, setUser] = useState({
     email: "",
-    fullName:"",
+    fullName: "",
     password: ""
   });
-  const [error, setError] = useState()
 
   const inputHandle = (e) => {
     setUser(() => ({
@@ -25,29 +24,22 @@ function Register () {
   };
 
   const handleSubmit = (e) => {
-      e.preventDefault();
+    e.preventDefault();
     try {
       dispatch(addUser(user));
       regisEmail(user.email, user.fullName, user.password)
       state.isAuthenticated === false ? navigate("/register") : navigate('/')
     } catch (error) {
-     console.log(error)
-      
+      console.log(error)
+
     }
   };
-        
-      
-    
-      
 
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-
-        {error && <p>{error}</p> }
-
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Register to your account
           </h2>
@@ -114,7 +106,6 @@ function Register () {
                 Remember me
               </label>
             </div>
-
             <div className="text-sm">
               <Link
                 to="/forgetpassword"
@@ -124,7 +115,6 @@ function Register () {
               </Link>
             </div>
           </div>
-
           <div>
             <button
               type="submit"
