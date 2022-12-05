@@ -27,6 +27,7 @@ const initialStateOrder = {
     cel:""
 }
 
+
 export const userSlice = createSlice({
     name: 'user',
     initialState: initialState,

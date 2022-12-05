@@ -12,12 +12,13 @@ export const Auth = () => {
         navigate("/cuenta");
     };
 
-    const handleGoogle = () => {
+    const handleGoogle = (e) => {
+        e.preventDefault()
         singGoogle();
         navigate("/cuenta");
     };
 
-    const handleLogin = () => navigate("/login");
+    const handleLogin = () => navigate("/register");
 
     const handleEmail = () => navigate("/login");
 

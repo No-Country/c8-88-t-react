@@ -1,13 +1,15 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs, doc, addDoc, query, where, getDoc } from "firebase/firestore"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, getDocs, addDoc, query, where, doc, setDoc, getDoc } from "firebase/firestore"
 import {
   GoogleAuthProvider,
   signInWithPopup,
-  createUserWithEmailAndPassword
-} from 'firebase/auth'
+  signInWithRedirect,
+  createUserWithEmailAndPassword } from 'firebase/auth'
 import { FacebookAuthProvider } from 'firebase/auth'
+
+
 
 
 const firebaseConfig = {
@@ -19,34 +21,42 @@ const firebaseConfig = {
   appId: "1:1018371128632:web:9c50d1cc368f3901bb55cd"
 };
 
-
-
 export const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 export const auth = getAuth(app)
 
+
 //registro email
-export const regisEmail = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password);
+export const regisEmail = async (email, fullName, password) => {
+  const info = await createUserWithEmailAndPassword(auth, email, fullName, password)
+  const docuRef = doc(firestore,`usuarios/${info.user.uid}`);
+  setDoc(docuRef, {correo: email, fullName: fullName, password: password})
+    
 }
+export const login = async (email, fullName, password) => {
+  const data = await signInWithEmailAndPassword(auth, email, fullName, password)
+} 
 
 // registro google
 export const singGoogle = async () => {
+  
   const provider = new GoogleAuthProvider()
   try {
-    const credentials = await signInWithPopup(auth, provider)
-    alert("bienvendio" + credentials.user.displayName)
+    const credentials = await signInWithRedirect(auth, provider)
+    console.log(credentials)
   } catch (error) {
-    console.log(error.message)
+    console.log(error)
   }
 }
 
+
+
 // registro facebook
 export const singFacebook = async () => {
-  const providerF = new FacebookAuthProvider()
+  const provider = new FacebookAuthProvider()
 
   try {
-    const credentials = await signInWithPopup(auth, providerF)
+    const credentials = await signInWithPopup(auth, provider)
     alert("bienvendio" + credentials.user.email)
   } catch (error) {
     console.log(error.message)
