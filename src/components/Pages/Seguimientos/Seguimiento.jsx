@@ -59,7 +59,7 @@ const Seguimiento = () => {
   return (
     <>
       <Container fluid className="wrapper_card_pack">
-        <Row md="auto" className="justify-content-center">
+        <Row sm="auto" className="justify-content-center">
           {order.map((item) => {
             return <CardPack
               key={item.id}

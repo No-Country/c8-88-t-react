@@ -4,6 +4,7 @@
     --color-white: #ffffff;
     --color-btn: #061930;
     --color-card: #fcfcfc;
+    --color-hover: #c1a1e7;
 }
 .wrapper_footer{
     width: 100%;
@@ -24,9 +25,57 @@
 .footer{
     max-width: 1366px;
 }
-.footer .footer_rrss{
-    width: clamp();
+.footer > div {
+    width: 50%;
 }
-.copyright{
+.wrapper_autores > div{
     width: 100%;
+}
+.wrapper_autores > div p{
+    width: 25%;
+}
+.wrapper_autores .autores{
+    width: 75%;
+    gap: 1.25rem;
+}
+.footer .dropdown-menu{
+    background-color: var(--color-hover);
+    transition: all .3s ease-in-out;
+}
+.footer .dropdown-item{
+    color: var(--color-btn);
+    background-color: var(--color-hover);
+}
+.footer .dropdown-item:hover{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+.footer .dropdown-menu[data-bs-popper]{
+    margin-top: 0;
+}
+
+
+
+@media  (max-width: 991px) {
+    .wrapper_footer{
+        min-height: auto;
+    }
+    .footer > div {
+        width: 100%;
+    }
+    .wrapper_autores > div{
+        width: 70%;
+    }
+    .wrapper_autores > div p{
+        width: 100%;
+    }
+    .wrapper_autores .autores{
+        width: 100%;
+    }
+}
+
+@media  (max-width: 425px){
+    .wrapper_autores > div{
+        width: 100%;
+    }
 }

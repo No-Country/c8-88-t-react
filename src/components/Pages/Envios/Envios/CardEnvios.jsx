@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, CardImg, Button, Col } from 'react-bootstrap'
-import receiving from "../../../assets/envios/receiving.png"
-import embalaje from "../../../assets/envios/embalaje.png"
-import seguro from "../../../assets/envios/seguro.png"
+import receiving from "../../../../assets/envios/receiving.png"
+import embalaje from "../../../../assets/envios/embalaje.png"
+import seguro from "../../../../assets/envios/seguro.png"
 import { useNavigate } from 'react-router-dom'
 import "./CardEnvios.css"
 

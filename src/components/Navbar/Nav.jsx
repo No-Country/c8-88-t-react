@@ -24,25 +24,13 @@ export const Nav = () => {
         navigate('/login')
     }
 
-
     const isConect = state.isAuthenticated ? state.fullName : "iniciar sesion"
-       
-    
-
-
-
-    
-      
-
-    
-
 
     return (<>
         <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
             <Link  className="navbar-brand logo_menu" to="/">
                 <img src={logo} alt="Logotipo de TravelPack" />
             </Link>
-
             <button onClick={()=> isActive()} className= {`navbar-toggler hamburger hamburger--spring ${active ? "is-active" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="hamburger-box">
                         <span className="hamburger-inner"></span>
@@ -53,13 +41,17 @@ export const Nav = () => {
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
-                    <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
+                    <ul className="nav-item dropdown p-0">
+                        <p className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cuenta
+                        </p>
+                        <li className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                            <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5" >
+                <div className="usuario_navbar w-100 w-md-25 text-start text-lg-end pe-md-5" >
                  <p className="nav-link" style={{cursor: 'pointer'}} onClick={handleClick} id="log-in"> {isConect}</p>
-                 
-                 
-                
                 </div>
             </div>
         </nav>

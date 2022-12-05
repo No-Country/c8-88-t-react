@@ -28,10 +28,9 @@ function Register() {
     try {
       dispatch(addUser(user));
       regisEmail(user.email, user.fullName, user.password)
-      state.isAuthenticated === false ? navigate("/register") : navigate('/')
+      state.isAuthenticated ? navigate("/register") : navigate('/')
     } catch (error) {
       console.log(error)
-
     }
   };
 

@@ -2,18 +2,11 @@ import React from 'react'
 import { Card, Col, FormLabel, FormCheck, Row } from 'react-bootstrap'
 import "./CardTravel.css"
 
-function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id}) {
+function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id }) {
 
     return (
         <Col>
             <FormLabel htmlFor={id}>
-                <FormCheck
-                    required
-                    id={id}
-                    type="radio"
-                    name="travel"
-                    onChange={() => { chooseTravel(nombre, apellido, cel, img) }}
-                />
                 <Card className="card_travel">
                     <Row className="g-0 justify-content-center">
                         <Col xs={5}>
@@ -23,12 +16,21 @@ function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id}) {
                             <Card.Body>
                                 <Card.Title>{nombre} {apellido}</Card.Title>
                                 <Card.Text>Edad: {edad}</Card.Text>
+
+                                <FormCheck
+                                    required
+                                    id={id}
+                                    type="radio"
+                                    name="travel"
+                                    onChange={() => { chooseTravel(nombre, apellido, cel, img) }}
+                                />
+
                             </Card.Body>
                         </Col>
                     </Row>
                 </Card>
             </FormLabel>
-        </Col>
+        </Col >
     )
 }
 

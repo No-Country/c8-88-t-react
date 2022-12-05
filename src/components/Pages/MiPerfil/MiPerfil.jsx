@@ -9,7 +9,7 @@ import { unsetUser } from '../../../reducers/users'
 
 
 
-const Cuenta = ({ user }) => {
+export const MiPerfil = ({ user }) => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -41,4 +41,3 @@ const Cuenta = ({ user }) => {
   )
 }
 
-export default Cuenta
