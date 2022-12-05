@@ -20,8 +20,7 @@ export const Nav = () => {
     }
     
     const handleClick = () => {
-
-        navigate('/login')
+        navigate('/auth')
     }
 
     const isConect = state.isAuthenticated ? state.fullName : "iniciar sesion"
