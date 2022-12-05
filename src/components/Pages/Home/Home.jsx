@@ -2,10 +2,19 @@ import { Carrusel } from "./Carrusel";
 import { FormDataPack } from "./FormDataPack";
 import { DestinosBuscados } from "./EnvíosEnCurso/DestinosBuscados/DestinosBuscados";
 import "./Home.css"
-
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from "../../../db";
 
 const Home = () => {
+  
+  onAuthStateChanged(auth, async (user) =>{
+    if(user){
 
+    }else{
+      
+    }
+  
+  })
 
   return (<>
       <div className="wrapper_home">

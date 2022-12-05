@@ -1,4 +1,5 @@
 import { combineReducers, createSlice } from '@reduxjs/toolkit'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const initialState = {
     email: "",
@@ -24,6 +25,7 @@ const initialStateOrder = {
     seguro: "",
     comentarios: ""
 }
+
 
 export const userSlice = createSlice({
     name: 'user',

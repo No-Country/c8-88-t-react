@@ -1,18 +1,21 @@
 import React from 'react'
 import { useState} from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {  useNavigate, Link } from 'react-router-dom';
 import { addUser } from '../reducers/users';
-import { login, regisEmail } from '../db';
+import { regisEmail } from '../db';
 
+function Register () {
 
-function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const state = useSelector((state)=> state.user)
   const [user, setUser] = useState({
     email: "",
+    fullName:"",
     password: ""
   });
+  const [error, setError] = useState()
 
   const inputHandle = (e) => {
     setUser(() => ({
@@ -20,24 +23,33 @@ function Login() {
       [e.target.name]: e.target.value
     }));
   };
+
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addUser(user));
-    login(user.email, user.password)
-    navigate("/");
+      e.preventDefault();
+    try {
+      dispatch(addUser(user));
+      regisEmail(user.email, user.fullName, user.password)
+      state.isAuthenticated === false ? navigate("/register") : navigate('/')
+    } catch (error) {
+     console.log(error)
+      
+    }
   };
+        
+      
+    
+      
+
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <img
-            className="mx-auto h-12 w-auto"
-            src=""
-            alt="Workflow"
-          />
+
+        {error && <p>{error}</p> }
+
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Register to your account
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -54,6 +66,20 @@ function Login() {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
+                onChange={inputHandle}
+              />
+            </div>
+            <div>
+              <label htmlFor="text" className="sr-only">
+                Full Name
+              </label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Full Name"
                 onChange={inputHandle}
               />
             </div>
@@ -113,4 +139,4 @@ function Login() {
   );
 };
 
-export default Login;
+export default Register;

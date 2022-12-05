@@ -14,23 +14,28 @@ import ProtectedRoute from './Routes/ProtectedRoute';
 import PrivateRoute from './Routes/PrivateRoutes';
 import MiPaquete from './components/Pages/Seguimientos/MiPaquete';
 import OrderOk from './components/Pages/Envios/OrderOk/OrderOk';
+import Register from './components/Register';
 
 
 
-function App() {
+function App({user}) {
+
+  
+
   return (<>
     <Nav />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<ProtectedRoute><Login /></ProtectedRoute> } />
+      <Route path="/login" element={<ProtectedRoute user={user}><Login /></ProtectedRoute> } />
+      <Route path="/register" element={<Register />}></Route>
       <Route path="/chooseTravel" element={<PrivateRoute><ChooseTravel /></PrivateRoute>}></Route>
       <Route path="/ofertTravel" element={<PrivateRoute><OfertTravel /></PrivateRoute>}></Route>
       <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
       <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
       <Route path="/mipaquete" element={<MiPaquete />} />
-      <Route path="/cuenta" element={<PrivateRoute><Cuenta /></PrivateRoute> } />
+      <Route path="/cuenta" element={<PrivateRoute user={user}><Cuenta /></PrivateRoute> } />
       <Route path="/firstForm" element={<FirstForm />} />
-      <Route path="/auth" element={<Auth/>}/>
+      <Route path="/auth" element={<ProtectedRoute user={user}><Auth/></ProtectedRoute>}/>
       <Route path="/orderOk" element={<OrderOk />}/>
     </Routes>
     <Footer/>

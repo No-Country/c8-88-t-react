@@ -2,16 +2,40 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/logos/logo travelpack.png";
 import "./Nav.css"
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 export const Nav = () => {
 
     //variables para manejar el btn-hamburguer
     const [active, setActive] = useState(false);
+    const state = useSelector((state)=> state.user)
+    console.log(state)
+    const navigate = useNavigate()
 
     //función que activará el btn-hamburguer
     const isActive = () => {
         setActive(!active);
     }
+    
+    const handleClick = () => {
+
+        navigate('/login')
+    }
+
+
+    const isConect = state.isAuthenticated ? state.fullName : "iniciar sesion"
+       
+    
+
+
+
+    
+      
+
+    
+
 
     return (<>
         <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
@@ -31,10 +55,15 @@ export const Nav = () => {
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
                     <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
                 </div>
-                <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5">
-                <Link className="nav-link" to={"/auth"} >Iniciar sesión</Link>
+                <div className="usuario_navbar w-100 w-md-25 text-star text-md-end pe-md-5" >
+                 <p className="nav-link" style={{cursor: 'pointer'}} onClick={handleClick} id="log-in"> {isConect}</p>
+                 
+                 
+                
                 </div>
             </div>
         </nav>
     </>)
 }
+
+
