@@ -38,23 +38,6 @@
     width: 75%;
     gap: 1.25rem;
 }
-.footer .dropdown-menu{
-    background-color: var(--color-hover);
-    transition: all .3s ease-in-out;
-}
-.footer .dropdown-item{
-    color: var(--color-btn);
-    background-color: var(--color-hover);
-}
-.footer .dropdown-item:hover{
-    color: var(--color-white);
-    background-color: var(--color-primary);
-}
-.footer .dropdown-menu[data-bs-popper]{
-    margin-top: 0;
-}
-
-
 
 @media  (max-width: 991px) {
     .wrapper_footer{

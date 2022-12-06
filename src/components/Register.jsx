@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addUser } from '../reducers/users';
 import { regisEmail } from '../db';
-import "./Register.css";
 import Logo from "../assets/logos/logo alterno.png";
 
 function Register() {

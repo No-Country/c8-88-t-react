@@ -39,14 +39,7 @@ export const Nav = () => {
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
-                    <ul className="nav-item dropdown p-0">
-                        <p className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Cuenta
-                        </p>
-                        <li className="dropdown-menu border-0" aria-labelledby="navbarDropdown">
-                            <Link className="dropdown-item" to={"/perfil"} >Mi perfil</Link>
-                        </li>
-                    </ul>
+                    <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
                 </div>
                 <div className="usuario_navbar w-100 w-md-25 text-start text-lg-end pe-md-5" >
                     <p className="nav-link" style={{ cursor: 'pointer' }} onClick={handleClick} id="log-in"> {isConect}</p>

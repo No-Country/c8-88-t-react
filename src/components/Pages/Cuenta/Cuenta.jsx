@@ -9,7 +9,7 @@ import { unsetUser } from '../../../reducers/users'
 
 
 
-export const MiPerfil = ({ user }) => {
+export const Cuenta = ({ user }) => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
