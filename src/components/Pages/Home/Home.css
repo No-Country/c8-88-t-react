@@ -22,7 +22,7 @@
     padding: 1rem;
     width: clamp(320px, 85vw, 1366px);
     min-height: 300px;
-    max-height: 450px;
+    max-height: 550px;
 }
 .wrapper_home .wrapper_envios .wrapper_cards{
     gap: 1rem;
@@ -40,4 +40,13 @@
 }
 .carousel-item{
     height: 225px;
+}
+
+@media (max-width:991px) {
+    .wrapper_home .wrapper_envios{
+        margin-bottom: 2.6rem;
+    }
+    .wrapper_home .wrapper_envios .wrapper_cards{
+        gap: 2.6rem;
+    }
 }

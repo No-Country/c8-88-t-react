@@ -4,7 +4,7 @@ import "./Footer.css"
 export const Footer = () => {
     return (<>
         <div className="wrapper_footer">
-            <footer className="footer mx-auto d-flex w-100 flex-column flex-lg-row">
+            <footer className="footer mx-auto d-flex w-100 flex-column flex-lg-row py-2">
 
                 <div className="d-flex justify-content-evenly flex-column order-2 order-lg-1">
 
@@ -21,7 +21,7 @@ export const Footer = () => {
 
                         <div className="d-flex  justify-content-evenly flex-column flex-lg-row mx-auto" >
                             <p className="d-flex justify-content-start ps-2" >Desarrollado por:</p>
-                            <div className="autores d-flex justify-content-start   ">
+                            <div className="autores d-flex justify-content-start ps-2">
                                 <a href="https://www.linkedin.com/in/tomas-paoletti-velado/" target="blank">Tomas Paoletti</a>
                                 <a href="https://www.linkedin.com/in/jose-martin-miño-b3956523a/" target="blank">Jose Martin Miño</a>
                                 <a href="https://www.linkedin.com/in/gabriel-castillo-frontend/" target="blank">Gabriel Castillo</a>
@@ -30,7 +30,7 @@ export const Footer = () => {
 
                         <div className="d-flex  justify-content-evenly flex-column flex-lg-row mx-auto">
                             <p className="d-flex justify-content-start ps-2">Diseñado por:</p>
-                            <div className="autores d-flex justify-content-start   ">
+                            <div className="autores d-flex justify-content-start ps-2">
                                 <a href="https://www.linkedin.com/in/yanina-calviello-81b33a215/" target="blank">Yanina Calviello</a>
                                 <a href="https://www.linkedin.com/in/anthonella-rua-7b1b351b8/" target="blank">Anthonella Rua</a>
                             </div>
