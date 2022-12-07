@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+(https://raw.githubusercontent.com/TomasPaoletti/c8-88-t-react/master/assets/imgreadme.jpg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Título del proyecto:
 
-## Available Scripts
+Travelpack
 
-In the project directory, you can run:
+## Descripción del proyecto 
 
-### `npm start`
+El sitio web de Travelpack se crea con el objetivo de facilitar los envíos al exterior a los usuarios brindándoles a su vez una opción más económica que los servicios que se usan tradicionalmente.
+Surge a partir de observar la cantidad de personas que emigran a diario a diferentes países del mundo y que necesitan documentación para hacer trámites u objetos personales que dejaron en sus viviendas. A su vez, los viajeros pueden beneficiarse ganando dinero mientras realizan sus viajes.
+Se busca brindar una plataforma simple de usar para todas las personas y confiable ya que los paquetes que envían quieren que lleguen a destino en tiempo y forma.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funcionalidades 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Actuales: 
+- Inicio de sesión: presenta la seguridad necesaria para que la cuenta sea segura.
+- Realizar un envío internacional: cargando los datos como origen y destino del paquete así como el detalle del mismo. A partir de ahí se elige al viajero que lo llevará según sus valoraciones lo cual brinda seguridad al usuario y se le abona. El pago se desbloquea al momento de concretar la entrega.
+- Seguimiento del paquete: una vez entregado el paquete al viajero que aceptó la oferta propuesta se puede seguir el estado del mismo.
 
-### `npm test`
+### A futuro:
+- Sección de cuenta: en esta se encuentran datos como el perfil y preguntas frecuentes del usuario.
+- Información para enviar: dentro de la sección de “envíos” se encuentran también instrucciones sobre el embalaje del paquete y la posibilidad de contratar un seguro.
+-Valorar al viajero: tener la posibilidad de puntuar al viajero que realiza la entrega del paquete una vez ya concretada la misma.
+- Sesión del viajero: la persona que desee llevar un paquete durante su viaje podrá registrarse como viajero, cargar el trayecto y la fecha del mismo. Luego, le llegarán notificaciones con las ofertas propuestas por las personas que quieren hacer un envío.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ¿Quieres instalar este proyecto?
 
-### `npm run build`
+Simplemente hacemos un git clone de https://github.com/No-Country/c8-88-t-react. Luego nos posicionamos en el directorio correcto con cd c8-88-t-react y hacemos un npm install.
+Por ultimo hacemos un npm start y ¡listo! 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias usadas:
+- HTML
+- CSS
+- React.js
+- React Bootstrap
+- Redux toolkit
+- React router dom
+- Firebase
+- Figma
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Roles de cada integrante:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Anthonella Rua:** Diseñadora UX UI
+**Yanina Calviello:** Diseñadora UX UI
+**Gabriel Castillo:** Desarrollador Front end React
+**Tomás Paoletti Velado:** Desarrollador Front end React
+**José Martín Miño:** Desarrollador Front end React
 
-### `npm run eject`
+## Link al sitio:
+[Travelpack] (https://travelpack-eight.vercel.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
