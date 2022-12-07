@@ -1,4 +1,4 @@
-(https://raw.githubusercontent.com/TomasPaoletti/c8-88-t-react/master/assets/imgreadme.jpg)
+(https://raw.githubusercontent.com/No-Country/c8-88-t-react/master/assets/imgreadme.jpg)
 
 ## Título del proyecto:
 
