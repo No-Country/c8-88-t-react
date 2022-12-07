@@ -47,7 +47,7 @@ Por ultimo hacemos un npm start y ¡listo!
 **José Martín Miño:** Desarrollador Front end React
 
 ## Link al sitio:
-![Travelpack](https://travelpack-eight.vercel.app/)
+[Travelpack](https://travelpack-eight.vercel.app/)
 
 
 
