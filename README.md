@@ -1,4 +1,4 @@
-(https://raw.githubusercontent.com/No-Country/c8-88-t-react/master/assets/imgreadme.jpg)
+![image](https://github.com/No-Country/c8-88-t-react/blob/master/src/assets/imgreadme.jpg)
 
 ## Título del proyecto:
 
