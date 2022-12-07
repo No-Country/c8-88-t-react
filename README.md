@@ -40,15 +40,11 @@ Por ultimo hacemos un npm start y ¡listo!
 
 ## Roles de cada integrante:
 
-**Anthonella Rua:** Diseñadora UX UI
-**Yanina Calviello:** Diseñadora UX UI
-**Gabriel Castillo:** Desarrollador Front end React
-**Tomás Paoletti Velado:** Desarrollador Front end React
-**José Martín Miño:** Desarrollador Front end React
+- **Anthonella Rua:** Diseñadora UX UI
+- **Yanina Calviello:** Diseñadora UX UI
+- **Gabriel Castillo:** Desarrollador Front end React
+- **Tomás Paoletti Velado:** Desarrollador Front end React
+- **José Martín Miño:** Desarrollador Front end React
 
 ## Link al sitio:
 [Travelpack](https://travelpack-eight.vercel.app/)
-
-
-
-
