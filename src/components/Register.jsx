@@ -63,7 +63,7 @@ function Register() {
             <label className="form-label mb-0">Nombre y apellido</label>
               <input
                   id="fullName"
-                  name="email"
+                  name="fullName"
                   type="text"
                   required
                   className="rounded-1 "
