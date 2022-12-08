@@ -39,7 +39,6 @@ export const Nav = () => {
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                     <Link className="nav-link" to={"/envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
-                    <Link className="nav-link" to={"/cuenta"} >Cuenta</Link>
                 </div>
                 <div className="usuario_navbar w-100 w-md-25 text-start text-lg-end pe-md-5" >
                     <p className="nav-link" style={{ cursor: 'pointer' }} onClick={handleClick} id="log-in"> {isConect}</p>

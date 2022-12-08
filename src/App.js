@@ -6,7 +6,6 @@ import Seguimiento from './components/Pages/Seguimientos/Seguimiento';
 import ChooseTravel from './components/Pages/Envios/CardTravel/ChooseTravel';
 import OfertTravel from './components/Pages/Envios/OfertTravel/OfertTravel';
 import FirstForm from './components/Pages/Envios/FirstForm/FirstForm';
-import { Cuenta } from './components/Pages/Cuenta/Cuenta';
 import { Footer } from './components/Footer/Footer';
 import CheckPack from './components/Pages/Envios/CheckPack/CheckPack';
 import { Auth } from './components/Pages/Auth/Auth';
@@ -35,7 +34,6 @@ function App({ user }) {
           <Route path="/checkPack" element={<PrivateRoute><CheckPack /></PrivateRoute>}></Route>
           <Route path="/seguimiento" element={<PrivateRoute><Seguimiento /></PrivateRoute>} />
           <Route path="/mipaquete/:id" element={<MiPaquete />} />
-          <Route path="/cuenta" element={<PrivateRoute user={user}><Cuenta /></PrivateRoute>} />
           <Route path="/firstForm" element={<FirstForm />} />
           <Route path="/auth" element={<ProtectedRoute user={user}><Auth /></ProtectedRoute>} />
           <Route path="/orderOk" element={<OrderOk />} />

@@ -45,7 +45,6 @@ export const Footer = () => {
                             <li> <Link to="/">Home</Link> </li>
                             <li> <Link to="/envios">Envíos</Link> </li>
                             <li> <Link to="/seguimiento">Seguimiento</Link> </li>
-                            <li> <Link to="/cuenta">Cuenta</Link> </li>
                         </ul>
                 </div>
 

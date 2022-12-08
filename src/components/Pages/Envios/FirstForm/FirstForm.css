@@ -1,3 +1,10 @@
+:root{
+    --color-primary: #371B58;
+    --color-secondary: #63BCAC;
+    --color-white: #ffffff;
+    --color-btn: #061930;
+    --color-hover: #c1a1e7;
+}
 .wrapper_title {
     max-width: 56rem;
     margin-top: 1rem;
