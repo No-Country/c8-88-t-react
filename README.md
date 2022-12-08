@@ -20,7 +20,7 @@ Se busca brindar una plataforma simple de usar para todas las personas y confiab
 ### A futuro:
 - Sección de cuenta: en esta se encuentran datos como el perfil y preguntas frecuentes del usuario.
 - Información para enviar: dentro de la sección de “envíos” se encuentran también instrucciones sobre el embalaje del paquete y la posibilidad de contratar un seguro.
--Valorar al viajero: tener la posibilidad de puntuar al viajero que realiza la entrega del paquete una vez ya concretada la misma.
+- Valorar al viajero: tener la posibilidad de puntuar al viajero que realiza la entrega del paquete una vez ya concretada la misma.
 - Sesión del viajero: la persona que desee llevar un paquete durante su viaje podrá registrarse como viajero, cargar el trayecto y la fecha del mismo. Luego, le llegarán notificaciones con las ofertas propuestas por las personas que quieren hacer un envío.
 
 ## ¿Quieres instalar este proyecto?
@@ -48,3 +48,6 @@ Por ultimo hacemos un npm start y ¡listo!
 
 ## Link al sitio:
 [Travelpack](https://travelpack-eight.vercel.app/)
+
+## Link a la presentacion
+[Presentacion](https://www.figma.com/proto/QAwpgs7z7ZzNH63irfgPGI/C8-88?node-id=243%3A10594&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=243%3A10594&show-proto-sidebar=1)
