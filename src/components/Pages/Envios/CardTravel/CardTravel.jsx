@@ -16,7 +16,6 @@ function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id }) {
                             <Card.Body>
                                 <Card.Title>{nombre} {apellido}</Card.Title>
                                 <Card.Text>Edad: {edad}</Card.Text>
-
                                 <FormCheck
                                     required
                                     id={id}
@@ -24,7 +23,6 @@ function CardTravel({ img, nombre, apellido, chooseTravel, edad, cel, id }) {
                                     name="travel"
                                     onChange={() => { chooseTravel(nombre, apellido, cel, img) }}
                                 />
-
                             </Card.Body>
                         </Col>
                     </Row>

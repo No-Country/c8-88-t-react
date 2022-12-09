@@ -5,7 +5,7 @@ import CardEnvios from './CardEnvios'
 function Envios() {
     return (
         <Container>
-            <Row className="wrapper_envios_card">
+            <Row className="wrapper_Envios_card">
                 <CardEnvios />
             </Row>
         </Container>

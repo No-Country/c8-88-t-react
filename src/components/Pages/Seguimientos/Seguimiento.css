@@ -1,12 +1,12 @@
 
-.wrapper_no_envios img {
+.wrapper_no_Envios img {
     margin: 6rem 0 4rem 0;
 }
 
-.wrapper_no_envios .link {
+.wrapper_no_Envios .link {
     color: var(--color-primary);
 }
 
-.wrapper_no_envios .link:hover {
+.wrapper_no_Envios .link:hover {
     color: var(--color-secondary);
 }

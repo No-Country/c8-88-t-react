@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
-import firestore from "../../../db/index";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
+import firestore from "../../../db/index";
 import Rectangle from '../../../assets/loader/Rectangle.gif'
-import './Seguimiento.css'
 import CardPack from "./CardPack";
 import londres from '../../../assets/destinos/londres.png'
 import nopack from '../../../assets/envios/nopack.png'
+import './Seguimiento.css'
 
 
 const Seguimiento = () => {
@@ -36,7 +36,7 @@ const Seguimiento = () => {
             </Col>
           </Row>
         </Container>) :
-        (<Container fluid className="wrapper_no_envios">
+        (<Container fluid className="wrapper_no_Envios">
           <Row md="auto" className="justify-content-center">
             <Col>
               <img src={nopack} alt="sin paquete" />
@@ -44,12 +44,12 @@ const Seguimiento = () => {
           </Row>
           <Row md="auto" className="justify-content-center">
             <Col>
-              <h3>No tienes ningun envio realizado</h3>
+              <h3>No tienes ningún envío realizado</h3>
             </Col>
           </Row>
           <Row md="auto" className="justify-content-center">
             <Col>
-              <Link className="link" to={"/"}><h5>Pulsa aqui para empezar uno</h5></Link>
+              <Link className="link" to={"/"}><h5>Pulsa aquí para empezar uno</h5></Link>
             </Col>
           </Row>
         </Container>)

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card, CardImg, Button, Col } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import receiving from "../../../../assets/envios/receiving.png"
 import embalaje from "../../../../assets/envios/embalaje.png"
 import seguro from "../../../../assets/envios/seguro.png"
-import { useNavigate } from 'react-router-dom'
 import "./CardEnvios.css"
 
 function CardEnvios() {
@@ -15,7 +15,7 @@ function CardEnvios() {
             <Card>
                 <CardImg variant="top" src={receiving} />
                 <Card.Body>
-                    <Card.Title>Nuevo envio</Card.Title>
+                    <Card.Title>Nuevo envío</Card.Title>
                     <Card.Text>
                         Cargá los datos de tu envío y esperá a que un viajero acepte tu oferta
                     </Card.Text>

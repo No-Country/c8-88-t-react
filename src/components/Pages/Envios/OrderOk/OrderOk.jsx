@@ -18,11 +18,11 @@ function OrderOk() {
                     <h3>Ya enviamos tu oferta al viajero</h3>
                 </Col>
                 <Col className="wrapper_text" xs={12}>
-                    <h5>Te llegará una notificacion cuando acepte el envio</h5>
+                    <h5>Te llegará una notificación cuando acepte el envio</h5>
                 </Col>
             </Row>
             <Row>
-                <Buttons back="/" children="Home"/>
+                <Buttons back="/" children="Home" />
             </Row>
         </Container>
     )

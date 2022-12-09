@@ -6,9 +6,7 @@ import './Buttons.css'
 function Buttons({ back, children }) {
 
     const navigate = useNavigate()
-    const backUrl = () => {
-        navigate(`${back}`)
-    }
+    const backUrl = () => navigate(`${back}`)
 
     return (
         <Container className="wrapper_button">

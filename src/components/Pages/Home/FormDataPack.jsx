@@ -59,7 +59,7 @@ export const FormDataPack = () => {
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
                 <label className="form-label">
-                    Fecha Inicio <i className="bi bi-calendar2 fs-5 ms-2"></i>
+                    Fecha inicio <i className="bi bi-calendar2 fs-5 ms-2"></i>
                 </label>
                 <input
                     type="date"
@@ -73,7 +73,7 @@ export const FormDataPack = () => {
             </div>
             <div className="col-10 col-sm-8 mx-auto col-md-6 col-lg-3 ">
                 <label className="form-label">
-                    Fecha Final <i className="bi bi-calendar2 fs-5 ms-2"></i>
+                    Fecha final <i className="bi bi-calendar2 fs-5 ms-2"></i>
                 </label>
                 <input
                     type="date"

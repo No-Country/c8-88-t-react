@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import './CardPack.css'
 import valija from '../../../assets/envios/valija.png'
+import './CardPack.css'
 
 function CardPack({ img, destino, travel, id }) {
 

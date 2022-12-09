@@ -1,6 +1,6 @@
 import "./CardEnvios.css"
 
-export const CardEnvios = ({destino, img, pais}) => {
+export const CardEnvios = ({ destino, img, pais }) => {
     return (<>
         <div className="wrapper_card d-flex">
             <div className="img_card">

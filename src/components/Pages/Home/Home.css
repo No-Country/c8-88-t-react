@@ -17,14 +17,14 @@
     max-height: 500px;
     background-color: var(--color-secondary);
 }
-.wrapper_home .wrapper_envios{
+.wrapper_home .wrapper_Envios{
     margin: 2rem auto;
     padding: 1rem;
     width: clamp(320px, 85vw, 1366px);
     min-height: 300px;
     max-height: 550px;
 }
-.wrapper_home .wrapper_envios .wrapper_cards{
+.wrapper_home .wrapper_Envios .wrapper_cards{
     gap: 1rem;
 }
 .btn-primary{
@@ -43,10 +43,10 @@
 }
 
 @media (max-width:991px) {
-    .wrapper_home .wrapper_envios{
+    .wrapper_home .wrapper_Envios{
         margin-bottom: 2.6rem;
     }
-    .wrapper_home .wrapper_envios .wrapper_cards{
+    .wrapper_home .wrapper_Envios .wrapper_cards{
         gap: 2.6rem;
     }
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import Buttons from '../Buttons/Buttons';
 import { orderTravellers } from '../../../../db'
+import Buttons from '../Buttons/Buttons';
 import FormCheckLabel from 'react-bootstrap/esm/FormCheckLabel';
 import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 import mastercard from '../../../../assets/envios/mastercard.png'
@@ -11,8 +11,6 @@ import visa from '../../../../assets/envios/visa.png'
 import mercado from '../../../../assets/envios/mercado.png'
 import pack from '../../../../assets/envios/pack.png'
 import './CheckPack.css'
-
-
 
 function CheckPack() {
 
@@ -40,9 +38,9 @@ function CheckPack() {
                 </Row>
             </Container>
             <Form onSubmit={handleSubmit}>
-                <Container className="wrapper_envios_form">
+                <Container className="wrapper_Envios_form">
                     <Row className="ms-3 mt-3">
-                        <h5>Dettale del envio</h5>
+                        <h5>Detalle del envío</h5>
                     </Row>
                     <Row className="ms-3 mb-3">
                         <Col lg={4}>
@@ -102,7 +100,7 @@ function CheckPack() {
                         </Row>
                     </Col>
                 </Row>
-                <Buttons back="/ofertTravel" children="Atrás"/>
+                <Buttons back="/ofertTravel" children="Atrás" />
             </Form>
         </>
     )

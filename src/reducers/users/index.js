@@ -37,7 +37,7 @@ export const userSlice = createSlice({
             state.fullName = action.payload.fullName;
             state.password = action.payload.password;
             state.isAuthenticated = true
-            state.user = state.user
+            
         },
         unsetUser: (state) => {
             state.email = ""
@@ -54,8 +54,8 @@ const orderSlice = createSlice({
     initialState: initialStateOrder,
     reducers: {
         addHome: (state, action) => {
-            state.origen = action.payload.origen;
-            state.destino = action.payload.destino;
+            state.origen = action.payload.origen.toLowerCase();
+            state.destino = action.payload.destino.toLowerCase();
             state.inicio = action.payload.inicio;
             state.final = action.payload.final;
         },

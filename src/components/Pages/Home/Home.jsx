@@ -2,31 +2,20 @@ import { Carrusel } from "./Carrusel";
 import { FormDataPack } from "./FormDataPack";
 import { DestinosBuscados } from "./EnvíosEnCurso/DestinosBuscados/DestinosBuscados";
 import "./Home.css"
-import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from "../../../db";
 
 const Home = () => {
-  
-  onAuthStateChanged(auth, async (user) =>{
-    if(user){
-
-    }else{
-      
-    }
-  
-  })
 
   return (<>
-      <div className="wrapper_home">
-        <Carrusel />
-        <div className="wrapper_form d-flex justify-content-center">
-          <FormDataPack />
-        </div>
-        <div className="wrapper_envios">
-          <DestinosBuscados />
-        </div>
+    <div className="wrapper_home">
+      <Carrusel />
+      <div className="wrapper_form d-flex justify-content-center">
+        <FormDataPack />
       </div>
-    </>);
+      <div className="wrapper_Envios">
+        <DestinosBuscados />
+      </div>
+    </div>
+  </>);
 };
 
 export default Home;

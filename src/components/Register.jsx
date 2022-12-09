@@ -42,10 +42,8 @@ function Register() {
         <img className="" src={Logo} alt="Logo TravelPack"/>
         <h2 className="h4">Registra tu cuenta</h2>
       </div>
-
       <div className='login_main d-flex justify-content-center'>
         <form className="row g-4 w-100 " onSubmit={handleSubmit}>
-
         <div className=" col-10  mx-auto d-flex flex-column">
             <label className="form-label mb-0">Correo electrónico</label>
               <input
@@ -58,7 +56,6 @@ function Register() {
                   onChange={inputHandle}
                 />
           </div>
-
           <div className=" col-10  mx-auto d-flex flex-column">
             <label className="form-label mb-0">Nombre y apellido</label>
               <input
@@ -71,7 +68,6 @@ function Register() {
                   onChange={inputHandle}
                 />
           </div>
-
           <div className=" col-10  mx-auto d-flex flex-column">
             <label className="form-label mb-0">Contraseña</label>
               <input
@@ -84,7 +80,6 @@ function Register() {
                   onChange={inputHandle}
                 />
           </div>
-
           <div className=" col-10  mx-auto d-flex flex-column mr-auto">
             <button type="submit" className='btn btn-primary rounded-3 '>
               Registrar

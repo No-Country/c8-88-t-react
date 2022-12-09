@@ -8,12 +8,10 @@ import { useSelector } from "react-redux";
 
 export const Nav = () => {
 
-    //variables para manejar el btn-hamburguer
     const [active, setActive] = useState(false);
     const state = useSelector((state) => state.user)
     const navigate = useNavigate()
 
-    //función que activará el btn-hamburguer
     const isActive = () => {
         setActive(!active);
     }
@@ -22,7 +20,7 @@ export const Nav = () => {
         navigate('/auth');
     }
 
-    const isConect = state.isAuthenticated ? state.fullName : "iniciar sesion"
+    const isConect = state.isAuthenticated ? state.fullName : "Iniciar sesión"
 
     return (<>
         <nav className="navbar navbar-expand-lg d-flex justify-content-lg-around justify-content-between px-1 px-lg-0" >
@@ -37,7 +35,7 @@ export const Nav = () => {
             <div className="collapse navbar-collapse wrapper_enlaces" id="navbarNavAltMarkup">
                 <div className="navbar-nav d-lg-flex justify-content-lg-evenly fw-500">
                     <Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
-                    <Link className="nav-link" to={"/envios"} >Envíos</Link>
+                    <Link className="nav-link" to={"/Envios"} >Envíos</Link>
                     <Link className="nav-link" to={"/seguimiento"} >Seguimiento</Link>
                 </div>
                 <div className="usuario_navbar w-100 w-md-25 text-start text-lg-end pe-md-5" >

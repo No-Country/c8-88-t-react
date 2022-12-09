@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Container, Form, Row, Col } from "react-bootstrap"
 import { getTravellers } from '../../../../db'
 import { useNavigate } from "react-router-dom"
+import { addTravel } from '../../../../reducers/users';
+import { useDispatch, useSelector } from 'react-redux'
 import Buttons from '../Buttons/Buttons';
 import CardList from './CardList'
-import { useDispatch, useSelector } from 'react-redux'
-import { addTravel } from '../../../../reducers/users';
-import "./ChooseTravel.css"
 import Rectangle from '../../../../assets/loader/Rectangle.gif'
 import icon from '../../../../assets/envios/icon.png'
+import "./ChooseTravel.css"
 
 
 function ChooseTravel() {
@@ -27,8 +27,8 @@ function ChooseTravel() {
 
     useEffect(() => {
         setLoading(true)
-        getTravellers(destino, origen).then(response => setData(response))
-            .finally(() => setLoading(false))
+            getTravellers(destino, origen).then(response => setData(response))
+                .finally(() => setLoading(false))
     }, [destino, origen])
 
     const inputForm = (nombre, apellido, cel, img) => {
@@ -39,7 +39,6 @@ function ChooseTravel() {
             img: img
         }))
     }
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -65,7 +64,7 @@ function ChooseTravel() {
                     </Row>
                     <Row className="justify-content-center">
                         <Col sm="auto">
-                            <h3>No se encuentran viajeros disponibles para este envio</h3>
+                            <h3>No se encuentran viajeros disponibles para este envío</h3>
                         </Col>
                     </Row>
                     <Row className="justify-content-center">
@@ -110,8 +109,7 @@ function ChooseTravel() {
                                 />
                             </Row>
                         </Container>
-                        <Buttons
-                            back="/" children="Atrás" />
+                        <Buttons back="/" children="Atrás" />
                     </Form>
                 </>)
             }

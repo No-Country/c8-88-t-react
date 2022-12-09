@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Container, FormLabel, Row, Col, FormCheck, FormControl, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import Buttons from '../Buttons/Buttons';
 import { useDispatch } from 'react-redux'
 import { addOfert } from '../../../../reducers/users'
+import Buttons from '../Buttons/Buttons';
 
 
 function OfertTravel() {
@@ -53,7 +53,7 @@ function OfertTravel() {
                 </Row>
             </Container>
             <Form onSubmit={handleSubmit}>
-                <Container className="wrapper_envios_form">
+                <Container className="wrapper_Envios_form">
                     <Row className="m-3">
                         <FormLabel column lg="auto">Oferta ofrecida:</FormLabel>
                         <Col xs={2}>
